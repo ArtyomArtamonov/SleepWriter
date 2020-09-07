@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BF0779802506815C00FF8F05 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF07797F2506815C00FF8F05 /* UIColor.swift */; };
+		BF0779822506869900FF8F05 /* GradientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0779812506869900FF8F05 /* GradientViewController.swift */; };
+		BF648D382505328300AF99F7 /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF648D2D2505328300AF99F7 /* Rubik-BoldItalic.ttf */; };
+		BF648D392505328300AF99F7 /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF648D2E2505328300AF99F7 /* Rubik-Light.ttf */; };
+		BF648D3A2505328300AF99F7 /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF648D2F2505328300AF99F7 /* Rubik-Medium.ttf */; };
+		BF648D3B2505328300AF99F7 /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF648D302505328300AF99F7 /* Rubik-BlackItalic.ttf */; };
+		BF648D3C2505328300AF99F7 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF648D312505328300AF99F7 /* Rubik-Regular.ttf */; };
+		BF648D3D2505328300AF99F7 /* SIL Open Font License.txt in Resources */ = {isa = PBXBuildFile; fileRef = BF648D322505328300AF99F7 /* SIL Open Font License.txt */; };
+		BF648D3E2505328300AF99F7 /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF648D332505328300AF99F7 /* Rubik-Black.ttf */; };
+		BF648D3F2505328300AF99F7 /* Rubik-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF648D342505328300AF99F7 /* Rubik-LightItalic.ttf */; };
+		BF648D402505328300AF99F7 /* Rubik-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF648D352505328300AF99F7 /* Rubik-Italic.ttf */; };
+		BF648D412505328300AF99F7 /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF648D362505328300AF99F7 /* Rubik-Bold.ttf */; };
+		BF648D422505328300AF99F7 /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF648D372505328300AF99F7 /* Rubik-MediumItalic.ttf */; };
+		BF648D452505382900AF99F7 /* WriterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF648D442505382900AF99F7 /* WriterViewController.swift */; };
+		BF648D472505383400AF99F7 /* DreamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF648D462505383400AF99F7 /* DreamsViewController.swift */; };
+		BF648D4A25053D4B00AF99F7 /* Dream.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF648D4925053D4B00AF99F7 /* Dream.swift */; };
+		BFDF4BB025040209006F020D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4BAF25040209006F020D /* AppDelegate.swift */; };
+		BFDF4BB225040209006F020D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4BB125040209006F020D /* SceneDelegate.swift */; };
+		BFDF4BB425040209006F020D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4BB325040209006F020D /* MainViewController.swift */; };
+		BFDF4BB725040209006F020D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFDF4BB525040209006F020D /* Main.storyboard */; };
+		BFDF4BB92504020A006F020D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFDF4BB82504020A006F020D /* Assets.xcassets */; };
+		BFDF4BBC2504020A006F020D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFDF4BBA2504020A006F020D /* LaunchScreen.storyboard */; };
+		FF2E24F86B4AD12E758A7BED /* Pods_SleepWriter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6BE511E56573F92F224028C /* Pods_SleepWriter.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A09E44EC43C91C67B93887A4 /* Pods-SleepWriter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SleepWriter.debug.xcconfig"; path = "Target Support Files/Pods-SleepWriter/Pods-SleepWriter.debug.xcconfig"; sourceTree = "<group>"; };
+		A6BE511E56573F92F224028C /* Pods_SleepWriter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SleepWriter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF07797F2506815C00FF8F05 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		BF0779812506869900FF8F05 /* GradientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientViewController.swift; sourceTree = "<group>"; };
+		BF648D2D2505328300AF99F7 /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-BoldItalic.ttf"; path = "../../../../Rubik/Rubik-BoldItalic.ttf"; sourceTree = "<group>"; };
+		BF648D2E2505328300AF99F7 /* Rubik-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-Light.ttf"; path = "../../../../Rubik/Rubik-Light.ttf"; sourceTree = "<group>"; };
+		BF648D2F2505328300AF99F7 /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-Medium.ttf"; path = "../../../../Rubik/Rubik-Medium.ttf"; sourceTree = "<group>"; };
+		BF648D302505328300AF99F7 /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-BlackItalic.ttf"; path = "../../../../Rubik/Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
+		BF648D312505328300AF99F7 /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-Regular.ttf"; path = "../../../../Rubik/Rubik-Regular.ttf"; sourceTree = "<group>"; };
+		BF648D322505328300AF99F7 /* SIL Open Font License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "SIL Open Font License.txt"; path = "../../../../Rubik/SIL Open Font License.txt"; sourceTree = "<group>"; };
+		BF648D332505328300AF99F7 /* Rubik-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-Black.ttf"; path = "../../../../Rubik/Rubik-Black.ttf"; sourceTree = "<group>"; };
+		BF648D342505328300AF99F7 /* Rubik-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-LightItalic.ttf"; path = "../../../../Rubik/Rubik-LightItalic.ttf"; sourceTree = "<group>"; };
+		BF648D352505328300AF99F7 /* Rubik-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-Italic.ttf"; path = "../../../../Rubik/Rubik-Italic.ttf"; sourceTree = "<group>"; };
+		BF648D362505328300AF99F7 /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-Bold.ttf"; path = "../../../../Rubik/Rubik-Bold.ttf"; sourceTree = "<group>"; };
+		BF648D372505328300AF99F7 /* Rubik-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-MediumItalic.ttf"; path = "../../../../Rubik/Rubik-MediumItalic.ttf"; sourceTree = "<group>"; };
+		BF648D442505382900AF99F7 /* WriterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriterViewController.swift; sourceTree = "<group>"; };
+		BF648D462505383400AF99F7 /* DreamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamsViewController.swift; sourceTree = "<group>"; };
+		BF648D4925053D4B00AF99F7 /* Dream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dream.swift; sourceTree = "<group>"; };
+		BFDF4BAC25040209006F020D /* SleepWriter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepWriter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFDF4BAF25040209006F020D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BFDF4BB125040209006F020D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		BFDF4BB325040209006F020D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		BFDF4BB625040209006F020D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BFDF4BB82504020A006F020D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BFDF4BBB2504020A006F020D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BFDF4BBD2504020A006F020D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB2E5AD0E46AF9C9CC372D77 /* Pods-SleepWriter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SleepWriter.release.xcconfig"; path = "Target Support Files/Pods-SleepWriter/Pods-SleepWriter.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BFDF4BA925040209006F020D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF2E24F86B4AD12E758A7BED /* Pods_SleepWriter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		39E430D5EC10262A938DD798 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A6BE511E56573F92F224028C /* Pods_SleepWriter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		96C3BAA03C7E426C5A38AB19 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A09E44EC43C91C67B93887A4 /* Pods-SleepWriter.debug.xcconfig */,
+				FB2E5AD0E46AF9C9CC372D77 /* Pods-SleepWriter.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BF07797E2506814A00FF8F05 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BF07797F2506815C00FF8F05 /* UIColor.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BF648D2A2505321E00AF99F7 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BF07797E2506814A00FF8F05 /* Extensions */,
+				BF648D4B25053EBB00AF99F7 /* Services */,
+				BF648D4825053D3700AF99F7 /* Structures */,
+				BF648D432505331000AF99F7 /* ViewControllers */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		BF648D2C2505326900AF99F7 /* Rubik */ = {
+			isa = PBXGroup;
+			children = (
+				BF648D332505328300AF99F7 /* Rubik-Black.ttf */,
+				BF648D302505328300AF99F7 /* Rubik-BlackItalic.ttf */,
+				BF648D362505328300AF99F7 /* Rubik-Bold.ttf */,
+				BF648D2D2505328300AF99F7 /* Rubik-BoldItalic.ttf */,
+				BF648D352505328300AF99F7 /* Rubik-Italic.ttf */,
+				BF648D2E2505328300AF99F7 /* Rubik-Light.ttf */,
+				BF648D342505328300AF99F7 /* Rubik-LightItalic.ttf */,
+				BF648D2F2505328300AF99F7 /* Rubik-Medium.ttf */,
+				BF648D372505328300AF99F7 /* Rubik-MediumItalic.ttf */,
+				BF648D312505328300AF99F7 /* Rubik-Regular.ttf */,
+				BF648D322505328300AF99F7 /* SIL Open Font License.txt */,
+			);
+			path = Rubik;
+			sourceTree = "<group>";
+		};
+		BF648D432505331000AF99F7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BFDF4BB325040209006F020D /* MainViewController.swift */,
+				BF648D442505382900AF99F7 /* WriterViewController.swift */,
+				BF648D462505383400AF99F7 /* DreamsViewController.swift */,
+				BF0779812506869900FF8F05 /* GradientViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BF648D4825053D3700AF99F7 /* Structures */ = {
+			isa = PBXGroup;
+			children = (
+				BF648D4925053D4B00AF99F7 /* Dream.swift */,
+			);
+			path = Structures;
+			sourceTree = "<group>";
+		};
+		BF648D4B25053EBB00AF99F7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BFDF4BA325040209006F020D = {
+			isa = PBXGroup;
+			children = (
+				BFDF4BAE25040209006F020D /* SleepWriter */,
+				BFDF4BAD25040209006F020D /* Products */,
+				96C3BAA03C7E426C5A38AB19 /* Pods */,
+				39E430D5EC10262A938DD798 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BFDF4BAD25040209006F020D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BFDF4BAC25040209006F020D /* SleepWriter.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BFDF4BAE25040209006F020D /* SleepWriter */ = {
+			isa = PBXGroup;
+			children = (
+				BF648D2C2505326900AF99F7 /* Rubik */,
+				BF648D2A2505321E00AF99F7 /* Classes */,
+				BFDF4BAF25040209006F020D /* AppDelegate.swift */,
+				BFDF4BB125040209006F020D /* SceneDelegate.swift */,
+				BFDF4BB525040209006F020D /* Main.storyboard */,
+				BFDF4BB82504020A006F020D /* Assets.xcassets */,
+				BFDF4BBA2504020A006F020D /* LaunchScreen.storyboard */,
+				BFDF4BBD2504020A006F020D /* Info.plist */,
+			);
+			path = SleepWriter;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BFDF4BAB25040209006F020D /* SleepWriter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFDF4BC02504020A006F020D /* Build configuration list for PBXNativeTarget "SleepWriter" */;
+			buildPhases = (
+				3ED01737E89DDC4EFCF5D290 /* [CP] Check Pods Manifest.lock */,
+				BFDF4BA825040209006F020D /* Sources */,
+				BFDF4BA925040209006F020D /* Frameworks */,
+				BFDF4BAA25040209006F020D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SleepWriter;
+			productName = SleepWriter;
+			productReference = BFDF4BAC25040209006F020D /* SleepWriter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDF4BA425040209006F020D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1170;
+				LastUpgradeCheck = 1170;
+				ORGANIZATIONNAME = "Artyom Artamonov";
+				TargetAttributes = {
+					BFDF4BAB25040209006F020D = {
+						CreatedOnToolsVersion = 11.7;
+					};
+				};
+			};
+			buildConfigurationList = BFDF4BA725040209006F020D /* Build configuration list for PBXProject "SleepWriter" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BFDF4BA325040209006F020D;
+			productRefGroup = BFDF4BAD25040209006F020D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BFDF4BAB25040209006F020D /* SleepWriter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BFDF4BAA25040209006F020D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF648D412505328300AF99F7 /* Rubik-Bold.ttf in Resources */,
+				BFDF4BBC2504020A006F020D /* LaunchScreen.storyboard in Resources */,
+				BF648D3C2505328300AF99F7 /* Rubik-Regular.ttf in Resources */,
+				BF648D382505328300AF99F7 /* Rubik-BoldItalic.ttf in Resources */,
+				BF648D3F2505328300AF99F7 /* Rubik-LightItalic.ttf in Resources */,
+				BF648D3D2505328300AF99F7 /* SIL Open Font License.txt in Resources */,
+				BF648D392505328300AF99F7 /* Rubik-Light.ttf in Resources */,
+				BF648D3A2505328300AF99F7 /* Rubik-Medium.ttf in Resources */,
+				BF648D3B2505328300AF99F7 /* Rubik-BlackItalic.ttf in Resources */,
+				BF648D402505328300AF99F7 /* Rubik-Italic.ttf in Resources */,
+				BFDF4BB92504020A006F020D /* Assets.xcassets in Resources */,
+				BF648D422505328300AF99F7 /* Rubik-MediumItalic.ttf in Resources */,
+				BF648D3E2505328300AF99F7 /* Rubik-Black.ttf in Resources */,
+				BFDF4BB725040209006F020D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3ED01737E89DDC4EFCF5D290 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SleepWriter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BFDF4BA825040209006F020D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFDF4BB425040209006F020D /* MainViewController.swift in Sources */,
+				BF0779802506815C00FF8F05 /* UIColor.swift in Sources */,
+				BF648D472505383400AF99F7 /* DreamsViewController.swift in Sources */,
+				BF648D452505382900AF99F7 /* WriterViewController.swift in Sources */,
+				BF0779822506869900FF8F05 /* GradientViewController.swift in Sources */,
+				BFDF4BB025040209006F020D /* AppDelegate.swift in Sources */,
+				BFDF4BB225040209006F020D /* SceneDelegate.swift in Sources */,
+				BF648D4A25053D4B00AF99F7 /* Dream.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BFDF4BB525040209006F020D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BFDF4BB625040209006F020D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BFDF4BBA2504020A006F020D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BFDF4BBB2504020A006F020D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BFDF4BBE2504020A006F020D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BFDF4BBF2504020A006F020D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BFDF4BC12504020A006F020D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A09E44EC43C91C67B93887A4 /* Pods-SleepWriter.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J7XTQZH8VJ;
+				INFOPLIST_FILE = SleepWriter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.art3aofficial.SleepWriter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BFDF4BC22504020A006F020D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB2E5AD0E46AF9C9CC372D77 /* Pods-SleepWriter.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J7XTQZH8VJ;
+				INFOPLIST_FILE = SleepWriter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.art3aofficial.SleepWriter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BFDF4BA725040209006F020D /* Build configuration list for PBXProject "SleepWriter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFDF4BBE2504020A006F020D /* Debug */,
+				BFDF4BBF2504020A006F020D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFDF4BC02504020A006F020D /* Build configuration list for PBXNativeTarget "SleepWriter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFDF4BC12504020A006F020D /* Debug */,
+				BFDF4BC22504020A006F020D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDF4BA425040209006F020D /* Project object */;
+}
