@@ -7,43 +7,36 @@
 //
 
 import UIKit
+import STTextView
 
 class WriterViewController: GradientViewController {
     
-    lazy var textField : UIView = {
+    let mainView : UIView = {
         let mainView = UIView()
-        let textField = UITextField()
         
         mainView.layer.cornerRadius = 25
         mainView.backgroundColor = UIColor(hex: "#DCDCDC2B")
         mainView.translatesAutoresizingMaskIntoConstraints = false
         
-        textField.textAlignment = .left
-        textField.contentVerticalAlignment = .top
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        
-        mainView.addSubview(textField)
-        
-        NSLayoutConstraint.activate([
-            textField.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 15),
-            textField.leftAnchor.constraint(equalTo: mainView.leftAnchor, constant: 15),
-            textField.rightAnchor.constraint(equalTo: mainView.rightAnchor, constant: -15),
-            textField.bottomAnchor.constraint(equalTo: mainView.bottomAnchor, constant: -15),
-        ])
-        
-        
-        
         return mainView
     }()
     
-    lazy var textFieldPlaceholder : UILabel = {
-        let textFieldPlaceholder = UILabel()
+    let textView : STTextView = {
+        let textField = STTextView()
         
-        textFieldPlaceholder.text = "Tap to start"
-        textFieldPlaceholder.textColor = UIColor(white: 0.7, alpha: 1)
-        textFieldPlaceholder.translatesAutoresizingMaskIntoConstraints = false
+        textField.textAlignment = .left
+        textField.backgroundColor = .clear
+        textField.font = UIFont(name: "Rubik-Regular", size: 22)
+        textField.textColor = .white
+        textField.translatesAutoresizingMaskIntoConstraints = false
         
-        return textFieldPlaceholder
+        textField.placeholder = "Tap to start"
+        textField.placeholderColor = UIColor(white: 0.7, alpha: 1)
+//        textField.placeholderAlignment = .center
+        textField.placeholderVerticalAlignment = .center
+        
+        return textField
+        
     }()
     
     lazy var saveButton : UIButton = {
@@ -58,17 +51,24 @@ class WriterViewController: GradientViewController {
         return saveButton
     }()
     
+    @objc func keyboardHide() -> () {
+        view.endEditing(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(keyboardHide))
+        view.addGestureRecognizer(tapGesture)
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.view.addSubview(textField)
+        self.view.addSubview(mainView)
         self.view.addSubview(saveButton)
-        self.view.addSubview(textFieldPlaceholder)
+        self.mainView.addSubview(self.textView)
         
         // Save Button
         NSLayoutConstraint.activate([
@@ -78,27 +78,21 @@ class WriterViewController: GradientViewController {
             saveButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -30),
         ])
         
+        // Main Text Field View
+        NSLayoutConstraint.activate([
+            mainView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 15),
+            mainView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -15),
+            mainView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            mainView.bottomAnchor.constraint(equalTo: self.saveButton.topAnchor, constant: -10),
+        ])
+        
         // Main Text Field
         NSLayoutConstraint.activate([
-            textField.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 15),
-            textField.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -15),
-            textField.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 10),
-            textField.bottomAnchor.constraint(equalTo: self.saveButton.topAnchor, constant: -10),
+            textView.topAnchor.constraint(equalTo: self.mainView.topAnchor, constant: 15),
+            textView.leftAnchor.constraint(equalTo: self.mainView.leftAnchor, constant: 15),
+            textView.rightAnchor.constraint(equalTo: self.mainView.rightAnchor, constant: -15),
+            textView.bottomAnchor.constraint(equalTo: self.mainView.bottomAnchor, constant: -15),
         ])
-        
-        // Main Text Field Placeholder
-        NSLayoutConstraint.activate([
-            textFieldPlaceholder.centerXAnchor.constraint(equalTo: self.textField.centerXAnchor),
-            textFieldPlaceholder.centerYAnchor.constraint(equalTo: self.textField.centerYAnchor),
-            textFieldPlaceholder.heightAnchor.constraint(equalToConstant: 30),
-            textFieldPlaceholder.widthAnchor.constraint(equalToConstant: 100),
-            
-        ])
-        
-        
-        
-        
-        
     }
 
 }

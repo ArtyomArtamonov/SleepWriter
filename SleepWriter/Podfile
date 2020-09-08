@@ -6,5 +6,5 @@ target 'SleepWriter' do
   use_frameworks!
 
   # Pods for SleepWriter
-
+  pod 'STTextView'
 end
