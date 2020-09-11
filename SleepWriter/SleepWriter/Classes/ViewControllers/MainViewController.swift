@@ -23,6 +23,8 @@ class MainViewController: UIViewController {
     
     var pages : [UIViewController] = [WriterViewController(), DreamsViewController()]
     
+    var gradientLayer : CAGradientLayer!
+    
     func configurePageController() -> () {
         
         //TODO : Comment
@@ -58,6 +60,20 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         configurePageController()
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        gradientLayer = CAGradientLayer()
+        
+        gradientLayer.frame = self.view.bounds
+        
+        gradientLayer.colors = [UIColor(red: 23/255, green: 160/255, blue: 175/255, alpha: 158.1/255).cgColor, UIColor(hex: "#0A464BFF")!.cgColor]
+        
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
         
     }
 

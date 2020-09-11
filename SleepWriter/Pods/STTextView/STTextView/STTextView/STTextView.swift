@@ -55,6 +55,13 @@ import UIKit
     
     
 // ART3A
+    
+    public var placeholderFont : UIFont = .boldSystemFont(ofSize: 25){
+        didSet {
+            self.placeholderTextView.font = placeholderFont
+        }
+    }
+    
     /// Alignment of placeholder
     public var placeholderAlignment : NSTextAlignment = .left{
         didSet {
@@ -81,10 +88,9 @@ import UIKit
                 constraints.append(placeholderTextView.centerXAnchor.constraint(equalTo: self.centerXAnchor))
                 constraints.append(placeholderTextView.widthAnchor.constraint(equalToConstant: 100))
                 constraints.append(placeholderTextView.heightAnchor.constraint(equalToConstant: 30))
+                placeholderTextView.textAlignment = .center
             }
             // TODO: make placeholder centered
-            placeholderTextView.backgroundColor = .blue
-            self.backgroundColor = .red
             NSLayoutConstraint.activate(constraints)
         }
     

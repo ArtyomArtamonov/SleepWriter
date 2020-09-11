@@ -3,12 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		BF0779802506815C00FF8F05 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF07797F2506815C00FF8F05 /* UIColor.swift */; };
-		BF0779822506869900FF8F05 /* GradientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0779812506869900FF8F05 /* GradientViewController.swift */; };
 		BF648D382505328300AF99F7 /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF648D2D2505328300AF99F7 /* Rubik-BoldItalic.ttf */; };
 		BF648D392505328300AF99F7 /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF648D2E2505328300AF99F7 /* Rubik-Light.ttf */; };
 		BF648D3A2505328300AF99F7 /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF648D2F2505328300AF99F7 /* Rubik-Medium.ttf */; };
@@ -23,6 +22,7 @@
 		BF648D452505382900AF99F7 /* WriterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF648D442505382900AF99F7 /* WriterViewController.swift */; };
 		BF648D472505383400AF99F7 /* DreamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF648D462505383400AF99F7 /* DreamsViewController.swift */; };
 		BF648D4A25053D4B00AF99F7 /* Dream.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF648D4925053D4B00AF99F7 /* Dream.swift */; };
+		BFB3A49E250BFB3700736E3F /* DreamViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB3A49D250BFB3700736E3F /* DreamViewCell.swift */; };
 		BFDF4BB025040209006F020D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4BAF25040209006F020D /* AppDelegate.swift */; };
 		BFDF4BB225040209006F020D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4BB125040209006F020D /* SceneDelegate.swift */; };
 		BFDF4BB425040209006F020D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4BB325040209006F020D /* MainViewController.swift */; };
@@ -36,7 +36,6 @@
 		A09E44EC43C91C67B93887A4 /* Pods-SleepWriter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SleepWriter.debug.xcconfig"; path = "Target Support Files/Pods-SleepWriter/Pods-SleepWriter.debug.xcconfig"; sourceTree = "<group>"; };
 		A6BE511E56573F92F224028C /* Pods_SleepWriter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SleepWriter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF07797F2506815C00FF8F05 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		BF0779812506869900FF8F05 /* GradientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientViewController.swift; sourceTree = "<group>"; };
 		BF648D2D2505328300AF99F7 /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-BoldItalic.ttf"; path = "../../../../Rubik/Rubik-BoldItalic.ttf"; sourceTree = "<group>"; };
 		BF648D2E2505328300AF99F7 /* Rubik-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-Light.ttf"; path = "../../../../Rubik/Rubik-Light.ttf"; sourceTree = "<group>"; };
 		BF648D2F2505328300AF99F7 /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-Medium.ttf"; path = "../../../../Rubik/Rubik-Medium.ttf"; sourceTree = "<group>"; };
@@ -51,6 +50,7 @@
 		BF648D442505382900AF99F7 /* WriterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriterViewController.swift; sourceTree = "<group>"; };
 		BF648D462505383400AF99F7 /* DreamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamsViewController.swift; sourceTree = "<group>"; };
 		BF648D4925053D4B00AF99F7 /* Dream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dream.swift; sourceTree = "<group>"; };
+		BFB3A49D250BFB3700736E3F /* DreamViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamViewCell.swift; sourceTree = "<group>"; };
 		BFDF4BAC25040209006F020D /* SleepWriter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepWriter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFDF4BAF25040209006F020D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFDF4BB125040209006F020D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +102,7 @@
 		BF648D2A2505321E00AF99F7 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BFB3A49C250BFB1800736E3F /* Views */,
 				BF07797E2506814A00FF8F05 /* Extensions */,
 				BF648D4B25053EBB00AF99F7 /* Services */,
 				BF648D4825053D3700AF99F7 /* Structures */,
@@ -134,7 +135,6 @@
 				BFDF4BB325040209006F020D /* MainViewController.swift */,
 				BF648D442505382900AF99F7 /* WriterViewController.swift */,
 				BF648D462505383400AF99F7 /* DreamsViewController.swift */,
-				BF0779812506869900FF8F05 /* GradientViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -152,6 +152,14 @@
 			children = (
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		BFB3A49C250BFB1800736E3F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BFB3A49D250BFB3700736E3F /* DreamViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		BFDF4BA325040209006F020D = {
@@ -315,9 +323,9 @@
 			files = (
 				BFDF4BB425040209006F020D /* MainViewController.swift in Sources */,
 				BF0779802506815C00FF8F05 /* UIColor.swift in Sources */,
+				BFB3A49E250BFB3700736E3F /* DreamViewCell.swift in Sources */,
 				BF648D472505383400AF99F7 /* DreamsViewController.swift in Sources */,
 				BF648D452505382900AF99F7 /* WriterViewController.swift in Sources */,
-				BF0779822506869900FF8F05 /* GradientViewController.swift in Sources */,
 				BFDF4BB025040209006F020D /* AppDelegate.swift in Sources */,
 				BFDF4BB225040209006F020D /* SceneDelegate.swift in Sources */,
 				BF648D4A25053D4B00AF99F7 /* Dream.swift in Sources */,

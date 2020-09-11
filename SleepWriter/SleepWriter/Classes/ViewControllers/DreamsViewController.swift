@@ -8,22 +8,45 @@
 
 import UIKit
 
-class DreamsViewController: GradientViewController {
+class DreamsViewController: UITableViewController {
+    
+    let cellId = "DreamTableViewCell"
+    
+    var dreamsData : [Dream] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = .clear
+        
+        
+        
+        tableView.register(DreamTableViewCell.self, forCellReuseIdentifier: cellId)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         
-        let label = UILabel(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
-        label.text = "second window"
-        label.textColor = .black
-        
-        self.view.addSubview(label)
     }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! DreamTableViewCell
+        
+        cell.titleLabel.text = "Title"
+        
+        
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
+    
+    
 
 }
