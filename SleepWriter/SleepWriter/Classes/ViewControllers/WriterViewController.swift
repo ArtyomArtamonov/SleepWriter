@@ -19,10 +19,12 @@ class WriterViewController: UIViewController {
             case .dark:
                 return UIColor(hex: "#0000005B")!
             case .light:
-                return UIColor(hex: "#DCDCDC2B")!
+                return UIColor(hex: "#1499A62B")!
             }
         }
     }
+    
+    var dreamsViewControllerDelegate : DreamsViewControllerDelegate
     
     let mainView : UIView = {
         let mainView = UIView()
@@ -84,9 +86,26 @@ class WriterViewController: UIViewController {
         saveButton.setTitle("Save", for: .normal)
         saveButton.titleLabel?.font = UIFont(name: "Rubik-Bold", size: 21)
         saveButton.translatesAutoresizingMaskIntoConstraints = false
+        saveButton.addTarget(self, action: #selector(saveButtonPressed), for: .touchUpInside)
         
         return saveButton
     }()
+    
+    @objc func saveButtonPressed(){
+        let newDream : Dream = Dream(date: Float(Date().timeIntervalSinceReferenceDate), title: titleTextView.text, text: textView.text, last_opened: Float(Date().timeIntervalSinceReferenceDate))
+        
+        guard !isDreamExists(newDream) else {return;}
+        
+        var data = loadDreams()
+        
+        data.append(newDream)
+        
+        try? JSONSerialization.save(jsonObject: data, toFilename: fileName){
+            self.dreamsViewControllerDelegate.updateCells()
+        }
+        
+        
+    }
     
     @objc func keyboardHide() -> () {
         view.endEditing(true)
@@ -102,6 +121,36 @@ class WriterViewController: UIViewController {
         UIView.animate(withDuration: 0.3){
             self.mainView.backgroundColor = Colors.light.colors
         }
+    }
+    
+    func loadDreams() -> [Dream]{
+        do{
+            return try JSONSerialization.loadJSON(withFilename: fileName) as! [Dream]
+        }catch{
+            return []
+        }
+    }
+    
+    func isDreamExists(_ dream : Dream) -> Bool{
+        let dreams = loadDreams()
+        
+        for savedDream in dreams{
+            if dream.text == savedDream.text{
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    init(dreamsViewControllerDelegate : DreamsViewControllerDelegate) {
+        self.dreamsViewControllerDelegate = dreamsViewControllerDelegate
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {

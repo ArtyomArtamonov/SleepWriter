@@ -8,7 +8,17 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+protocol MainViewControllerProtocol{
+    func slidePage(to pageNumber: Int) -> Void;
+}
+
+class MainViewController: UIViewController, MainViewControllerProtocol {
+    
+    func slidePage(to pageNumber: Int) {
+        if pageNumber < pageControl.numberOfPages{
+            pageControl.currentPage = pageNumber
+        }
+    }
     
     let pageController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
     
@@ -21,7 +31,7 @@ class MainViewController: UIViewController {
         return pageControl
     }()
     
-    var pages : [UIViewController] = [WriterViewController(), DreamsViewController()]
+    var pages : [UIViewController] = []
     
     var gradientLayer : CAGradientLayer!
     
@@ -46,8 +56,8 @@ class MainViewController: UIViewController {
                                      pageController.view.rightAnchor.constraint(equalTo: view.rightAnchor),
                                      pageController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)])
         
-        NSLayoutConstraint.activate([pageControl.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,
-                                                                         constant: 10),
+        NSLayoutConstraint.activate([
+                                        pageControl.bottomAnchor.constraint(equalTo:view.safeAreaLayoutGuide.bottomAnchor, constant: 0),
                                      pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor)])
         
         
@@ -58,6 +68,10 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let dreamsVC = DreamsViewController()
+        self.pages.insert(dreamsVC, at: 0)
+        self.pages.insert(WriterViewController(dreamsViewControllerDelegate: dreamsVC as DreamsViewControllerDelegate), at: 0)
         
         configurePageController()
         
@@ -110,6 +124,8 @@ extension MainViewController : UIPageViewControllerDelegate, UIPageViewControlle
         
         return pages[index]
     }
+    
+    
     
     
 }

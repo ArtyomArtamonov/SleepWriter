@@ -8,45 +8,58 @@
 
 import UIKit
 
-class DreamsViewController: UITableViewController {
+protocol DreamsViewControllerDelegate{
+    func updateCells() -> Void
+}
+
+class DreamsViewController: UITableViewController, DreamsViewControllerDelegate {
+    
+    var mainVC : MainViewControllerProtocol?
     
     let cellId = "DreamTableViewCell"
     
     var dreamsData : [Dream] = []
+    
+    func updateCells() {
+        
+        self.tableView.reloadData()
+
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = .clear
         
-        
+//        // Load info
+//        // Write nil:
+//        try? JSONSerialization.save(jsonObject: dreamsData, toFilename: fileName)
+//        // End write nil
+        if let data = try? JSONSerialization.loadJSON(withFilename: fileName){
+            dreamsData = data as! [Dream]
+        }
         
         tableView.register(DreamTableViewCell.self, forCellReuseIdentifier: cellId)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return dreamsData.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! DreamTableViewCell
+        let dream : Dream = dreamsData[indexPath.row]
+        cell.setCell(title: dream.title, text: dream.text)
         
-        cell.titleLabel.text = "Title"
-        
-        
+        // Configure cell
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
-    
-    
-
 }

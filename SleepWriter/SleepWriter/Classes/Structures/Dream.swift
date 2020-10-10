@@ -10,8 +10,8 @@ import Foundation
 
 // Dream structure to save on device
 struct Dream : Codable{
-    let date : Date
+    let date : Float
     let title : String
     let text : String
-    let last_opened : Date
+    let last_opened : Float
 }
