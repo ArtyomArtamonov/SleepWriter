@@ -16,10 +16,10 @@ class WriterViewController: UIViewController {
         
         public var colors: UIColor {
             switch self {
-            case .dark:
-                return UIColor(hex: "#0000005B")!
             case .light:
-                return UIColor(hex: "#1499A62B")!
+                return UIColor(white: 1, alpha: 0.1)//UIColor(hex: "#0000005B")!
+            case .dark:
+                return UIColor(white: 0, alpha: 0.2)//UIColor(hex: "#1499A62B")!
             }
         }
     }
@@ -44,6 +44,7 @@ class WriterViewController: UIViewController {
         textField.font = UIFont(name: "Rubik-Regular", size: 22)
         textField.textColor = .white
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.tintColor = .white
         
         textField.placeholder = ""
 //        textField.placeholderColor = UIColor(white: 0.7, alpha: 1)
@@ -64,6 +65,7 @@ class WriterViewController: UIViewController {
         textField.textContainer.maximumNumberOfLines = 1
         textField.textContainer.lineBreakMode = .byTruncatingTail
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.tintColor = .white
         
         
         textField.placeholder = "Title"
@@ -94,16 +96,18 @@ class WriterViewController: UIViewController {
     @objc func saveButtonPressed(){
         let newDream : Dream = Dream(date: Float(Date().timeIntervalSinceReferenceDate), title: titleTextView.text, text: textView.text, last_opened: Float(Date().timeIntervalSinceReferenceDate))
         
+        guard newDream.title != "" else {return;}
+        guard newDream.text != "" else {return;}
         guard !isDreamExists(newDream) else {return;}
+        
         
         var data = loadDreams()
         
         data.append(newDream)
         
-        try? JSONSerialization.save(jsonObject: data, toFilename: fileName){
-            self.dreamsViewControllerDelegate.updateCells()
-        }
-        
+        try? JSONSerialization.save(jsonObject: data, toFilename: fileName)
+        self.dreamsViewControllerDelegate.updateCells()
+                
         
     }
     

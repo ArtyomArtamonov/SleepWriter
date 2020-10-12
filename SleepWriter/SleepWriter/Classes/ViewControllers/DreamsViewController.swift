@@ -40,7 +40,7 @@ class DreamsViewController: UITableViewController, DreamsViewControllerDelegate 
 //        // Write nil:
 //        try? JSONSerialization.save(jsonObject: dreamsData, toFilename: fileName)
 //        // End write nil
-        
+        reloadDreams()
         
         tableView.register(DreamTableViewCell.self, forCellReuseIdentifier: cellId)
     }

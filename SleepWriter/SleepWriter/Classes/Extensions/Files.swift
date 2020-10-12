@@ -14,7 +14,7 @@ Extension to save/load a JSON object by filename. (".json" extension is assumed 
  */
 extension JSONSerialization {
     
-    static func loadJSON(withFilename filename: String, completionHandler : (() -> ())? = nil) throws -> Any? {
+    static func loadJSON(withFilename filename: String) throws -> Any? {
         let fm = FileManager.default
         let urls = fm.urls(for: .documentDirectory, in: .userDomainMask)
         if let url = urls.first {
@@ -24,11 +24,10 @@ extension JSONSerialization {
             let jsonObject = try JSONDecoder().decode([Dream].self, from: data)
             return jsonObject
         }
-        completionHandler?()
         return nil
     }
     
-    static func save<T : Encodable>(jsonObject: T, toFilename filename: String, completionHandler : (() -> ())? = nil) throws -> Bool{
+    static func save<T : Encodable>(jsonObject: T, toFilename filename: String) throws -> Bool{
         let fm = FileManager.default
         let urls = fm.urls(for: .documentDirectory, in: .userDomainMask)
         if let url = urls.first {
@@ -38,7 +37,6 @@ extension JSONSerialization {
             try data.write(to: fileURL, options: [.atomicWrite])
             return true
         }
-        completionHandler?()
         return false
     }
 }
