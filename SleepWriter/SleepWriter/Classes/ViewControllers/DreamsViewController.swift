@@ -20,24 +20,27 @@ class DreamsViewController: UITableViewController, DreamsViewControllerDelegate 
     
     var dreamsData : [Dream] = []
     
-    func updateCells() {
-        
+    public func updateCells() {
+        reloadDreams()
         self.tableView.reloadData()
-
+    }
+    
+    private func reloadDreams(){
+        if let data = try? JSONSerialization.loadJSON(withFilename: fileName){
+            dreamsData = data as! [Dream]
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = .clear
-        
+        self.tableView.separatorStyle = .none
 //        // Load info
 //        // Write nil:
 //        try? JSONSerialization.save(jsonObject: dreamsData, toFilename: fileName)
 //        // End write nil
-        if let data = try? JSONSerialization.loadJSON(withFilename: fileName){
-            dreamsData = data as! [Dream]
-        }
+        
         
         tableView.register(DreamTableViewCell.self, forCellReuseIdentifier: cellId)
     }
@@ -52,6 +55,7 @@ class DreamsViewController: UITableViewController, DreamsViewControllerDelegate 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! DreamTableViewCell
+        
         let dream : Dream = dreamsData[indexPath.row]
         cell.setCell(title: dream.title, text: dream.text)
         
@@ -62,4 +66,5 @@ class DreamsViewController: UITableViewController, DreamsViewControllerDelegate 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
+    
 }
