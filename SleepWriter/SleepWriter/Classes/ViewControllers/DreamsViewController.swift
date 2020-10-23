@@ -34,15 +34,21 @@ class DreamsViewController: UITableViewController, DreamsViewControllerDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.modalPresentationStyle = .overCurrentContext
+        
         self.view.backgroundColor = .clear
         self.tableView.separatorStyle = .none
+        self.tableView.register(DreamTableViewCell.self, forCellReuseIdentifier: cellId)
+        
+        
+        
 //        // Load info
 //        // Write nil:
 //        try? JSONSerialization.save(jsonObject: dreamsData, toFilename: fileName)
 //        // End write nil
         reloadDreams()
         
-        tableView.register(DreamTableViewCell.self, forCellReuseIdentifier: cellId)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,14 +63,19 @@ class DreamsViewController: UITableViewController, DreamsViewControllerDelegate 
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! DreamTableViewCell
         
         let dream : Dream = dreamsData[indexPath.row]
-        cell.setCell(title: dream.title, text: dream.text)
+        
+        cell.setCell(title: dream.title, text: floatTimeToDateString(since1970: dream.date))
         
         // Configure cell
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let dream = dreamsData[indexPath.row]
+        self.present(DreamReadViewController(dream: dream), animated: true)
+    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
-    
 }

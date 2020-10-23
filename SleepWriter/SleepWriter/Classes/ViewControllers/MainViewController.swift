@@ -48,6 +48,7 @@ class MainViewController: UIViewController, MainViewControllerProtocol {
         pageController.delegate = self
         pageController.dataSource = self
         
+        
         pageController.view.translatesAutoresizingMaskIntoConstraints = false
         pageControl.numberOfPages = pages.count
         

@@ -24,19 +24,31 @@ class WriterViewController: UIViewController {
         }
     }
     
+    internal enum BlockPosition {
+        case up, down
+    }
+    
+    
+    
+    let LEFT_CONST : CGFloat = 15
+    lazy var blockWidth : CGFloat = self.view.frame.size.width - LEFT_CONST*2
+    
+    
+    
+    
     var dreamsViewControllerDelegate : DreamsViewControllerDelegate
     
-    let mainView : UIView = {
-        let mainView = UIView()
+    lazy var mainView : UIView = {
+        let mainView = UIView(frame: .init(x: self.LEFT_CONST, y: self.titleTextView.frame.maxY, width: blockWidth, height: 30))
         
         mainView.layer.cornerRadius = 25
         mainView.backgroundColor = Colors.light.colors
-        mainView.translatesAutoresizingMaskIntoConstraints = false
+//        mainView.translatesAutoresizingMaskIntoConstraints = false
         
         return mainView
     }()
     
-    let textView : STTextView = {
+    lazy var textView : STTextView = {
         let textField = STTextView()
         
         textField.textAlignment = .left
@@ -55,8 +67,8 @@ class WriterViewController: UIViewController {
         
     }()
     
-    let titleTextView : STTextView = {
-        let textField = STTextView()
+    lazy var titleTextView : STTextView = {
+        let textField = STTextView(frame: .init(x: self.LEFT_CONST, y: self.view.safeAreaLayoutGuide.layoutFrame.minY + 10, width: blockWidth, height: 30))
         
         textField.textAlignment = .center
         textField.backgroundColor = .clear
@@ -64,7 +76,7 @@ class WriterViewController: UIViewController {
         textField.textColor = .white
         textField.textContainer.maximumNumberOfLines = 1
         textField.textContainer.lineBreakMode = .byTruncatingTail
-        textField.translatesAutoresizingMaskIntoConstraints = false
+//        textField.translatesAutoresizingMaskIntoConstraints = false
         textField.tintColor = .white
         
         
@@ -80,7 +92,7 @@ class WriterViewController: UIViewController {
         return textField
     }()
     
-    let saveButton : UIButton = {
+    lazy var saveButton : UIButton = {
         let saveButton = UIButton()
         
         saveButton.layer.cornerRadius = 25
@@ -93,8 +105,21 @@ class WriterViewController: UIViewController {
         return saveButton
     }()
     
+    lazy var helpButton : UIButton = {
+        let button = UIButton()
+        
+        button.layer.cornerRadius = 25
+        button.backgroundColor = UIColor(hex: "#00E0FFA2")
+        button.setTitle("Help", for: .normal)
+        button.titleLabel?.font = UIFont(name: "Rubik-Bold", size: 21)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(saveButtonPressed), for: .touchUpInside)
+        
+        return button
+    }()
+    
     @objc func saveButtonPressed(){
-        let newDream : Dream = Dream(date: Float(Date().timeIntervalSinceReferenceDate), title: titleTextView.text, text: textView.text, last_opened: Float(Date().timeIntervalSinceReferenceDate))
+        let newDream : Dream = Dream(date: Float(Date().timeIntervalSince1970), title: titleTextView.text, text: textView.text, last_opened: Float(Date().timeIntervalSince1970))
         
         guard newDream.title != "" else {return;}
         guard newDream.text != "" else {return;}
@@ -113,9 +138,16 @@ class WriterViewController: UIViewController {
     
     @objc func keyboardHide() -> () {
         view.endEditing(true)
+        moveBlocks(.down, keyboardPosition: .zero)
     }
     
     @objc func keyboardWillShow(notification: NSNotification){
+        guard let userInfo = notification.userInfo else {return}
+        guard let keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {return}
+        let keyboardFrame = keyboardSize.cgRectValue
+        
+        moveBlocks(.up, keyboardPosition: keyboardFrame)
+        
         UIView.animate(withDuration: 0.3){
             self.mainView.backgroundColor = Colors.dark.colors
         }
@@ -124,6 +156,15 @@ class WriterViewController: UIViewController {
     @objc func keyboardWillHide(notification: NSNotification){
         UIView.animate(withDuration: 0.3){
             self.mainView.backgroundColor = Colors.light.colors
+        }
+    }
+    
+    func moveBlocks(_ to: BlockPosition, keyboardPosition keyboardFrame : CGRect){
+        // TODO: move blocks up and down animated;
+        if to == .down{
+            
+        }else{
+            
         }
     }
     

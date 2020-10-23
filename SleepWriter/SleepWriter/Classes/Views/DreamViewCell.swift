@@ -14,7 +14,7 @@ class DreamTableViewCell: UITableViewCell {
         let label = UILabel()
         
         label.text = "title"
-        label.font = UIFont(name: "Rubik-Bold", size: 21)
+        label.font = UIFont(name: "Rubik-Bold", size: 24)
         label.textColor = .white
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -39,7 +39,7 @@ class DreamTableViewCell: UITableViewCell {
     private let mainView : UIView = {
         let view = UIView()
         
-        view.backgroundColor = UIColor(hex: "#9EFF0020")
+        view.backgroundColor = UIColor(hex: "#00000059")
         view.layer.cornerRadius = 25
         view.translatesAutoresizingMaskIntoConstraints = false
         
@@ -68,17 +68,17 @@ class DreamTableViewCell: UITableViewCell {
         ])
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 10),
+            titleLabel.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 30),
             titleLabel.centerXAnchor.constraint(equalTo: mainView.centerXAnchor),
             titleLabel.widthAnchor.constraint(equalTo: mainView.widthAnchor),
-            titleLabel.heightAnchor.constraint(equalToConstant: 24)
+            titleLabel.heightAnchor.constraint(equalToConstant: 28)
         ])
         
         NSLayoutConstraint.activate([
-            mainTextLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
+            mainTextLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
             mainTextLabel.centerXAnchor.constraint(equalTo: mainView.centerXAnchor),
             mainTextLabel.widthAnchor.constraint(equalTo: mainView.widthAnchor),
-            mainTextLabel.bottomAnchor.constraint(equalTo: mainView.bottomAnchor, constant: -10)
+            mainTextLabel.heightAnchor.constraint(equalToConstant: 20)
         ])
     }
     
@@ -87,12 +87,12 @@ class DreamTableViewCell: UITableViewCell {
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
-        if selected{
-            mainView.backgroundColor = UIColor(hex: "#9EFF0018")
-        }
-        else{
-            mainView.backgroundColor = UIColor(hex: "#9EFF0020")
-        }
+//        if selected{
+//            mainView.backgroundColor = UIColor(hex: "#9EFF0065")
+//        }
+//        else{
+//            mainView.backgroundColor = UIColor(hex: "#9EFF0020")
+//        }
     }
 
 }
