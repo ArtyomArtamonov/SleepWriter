@@ -28,18 +28,13 @@ class WriterViewController: UIViewController {
         case up, down
     }
     
-    
-    
     let LEFT_CONST : CGFloat = 15
     lazy var blockWidth : CGFloat = self.view.frame.size.width - LEFT_CONST*2
-    
-    
-    
     
     var dreamsViewControllerDelegate : DreamsViewControllerDelegate
     
     lazy var mainView : UIView = {
-        let mainView = UIView(frame: .init(x: self.LEFT_CONST, y: self.titleTextView.frame.maxY, width: blockWidth, height: 30))
+        let mainView = UIView(frame: .init(x: self.LEFT_CONST, y: titleTextView.frame.maxY, width: self.blockWidth, height: self.helpButton.frame.minY - titleTextView.frame.maxY - 15))
         
         mainView.layer.cornerRadius = 25
         mainView.backgroundColor = Colors.light.colors
@@ -49,26 +44,26 @@ class WriterViewController: UIViewController {
     }()
     
     lazy var textView : STTextView = {
-        let textField = STTextView()
+        let textField = STTextView(frame: .init(x: 10, y: 10, width: self.mainView.frame.width - 10, height: self.mainView.frame.height-10))
         
         textField.textAlignment = .left
         textField.backgroundColor = .clear
         textField.font = UIFont(name: "Rubik-Regular", size: 22)
         textField.textColor = .white
-        textField.translatesAutoresizingMaskIntoConstraints = false
+//        textField.translatesAutoresizingMaskIntoConstraints = false
         textField.tintColor = .white
         
         textField.placeholder = ""
 //        textField.placeholderColor = UIColor(white: 0.7, alpha: 1)
 ////        textField.placeholderAlignment = .center
-//        textField.placeholderVerticalAlignment = .center
+        textField.placeholderVerticalAlignment = .center
         
         return textField
         
     }()
     
     lazy var titleTextView : STTextView = {
-        let textField = STTextView(frame: .init(x: self.LEFT_CONST, y: self.view.safeAreaLayoutGuide.layoutFrame.minY + 10, width: blockWidth, height: 30))
+        let textField = STTextView(frame: .init(x: LEFT_CONST, y: self.view.safeAreaLayoutGuide.layoutFrame.minY + 20, width: self.blockWidth, height: 50))
         
         textField.textAlignment = .center
         textField.backgroundColor = .clear
@@ -93,27 +88,27 @@ class WriterViewController: UIViewController {
     }()
     
     lazy var saveButton : UIButton = {
-        let saveButton = UIButton()
+        let saveButton = UIButton(frame: .init(x: self.helpButton.frame.maxX + 10, y: self.view.safeAreaLayoutGuide.layoutFrame.maxY - 85, width: self.blockWidth/2 - 5, height: 55))
         
         saveButton.layer.cornerRadius = 25
         saveButton.backgroundColor = UIColor(hex: "#00E0FFA2")
         saveButton.setTitle("Save", for: .normal)
         saveButton.titleLabel?.font = UIFont(name: "Rubik-Bold", size: 21)
-        saveButton.translatesAutoresizingMaskIntoConstraints = false
+//        saveButton.translatesAutoresizingMaskIntoConstraints = false
         saveButton.addTarget(self, action: #selector(saveButtonPressed), for: .touchUpInside)
         
         return saveButton
     }()
     
     lazy var helpButton : UIButton = {
-        let button = UIButton()
+        let button = UIButton(frame: .init(x: LEFT_CONST, y: self.view.safeAreaLayoutGuide.layoutFrame.maxY - 85, width: self.blockWidth/2 - 5, height: 55))
         
         button.layer.cornerRadius = 25
         button.backgroundColor = UIColor(hex: "#00E0FFA2")
         button.setTitle("Help", for: .normal)
         button.titleLabel?.font = UIFont(name: "Rubik-Bold", size: 21)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(saveButtonPressed), for: .touchUpInside)
+//        button.translatesAutoresizingMaskIntoConstraints = false
+//        button.addTarget(self, action: #selector(saveButtonPressed), for: .touchUpInside)
         
         return button
     }()
@@ -138,7 +133,6 @@ class WriterViewController: UIViewController {
     
     @objc func keyboardHide() -> () {
         view.endEditing(true)
-        moveBlocks(.down, keyboardPosition: .zero)
     }
     
     @objc func keyboardWillShow(notification: NSNotification){
@@ -154,17 +148,24 @@ class WriterViewController: UIViewController {
     }
     
     @objc func keyboardWillHide(notification: NSNotification){
+        moveBlocks(.down, keyboardPosition: .zero)
         UIView.animate(withDuration: 0.3){
             self.mainView.backgroundColor = Colors.light.colors
         }
     }
     
-    func moveBlocks(_ to: BlockPosition, keyboardPosition keyboardFrame : CGRect){
+    func moveBlocks(_ position: BlockPosition, keyboardPosition keyboardFrame : CGRect){
         // TODO: move blocks up and down animated;
-        if to == .down{
-            
+        let animationTimeInterval : TimeInterval = 0.5
+        
+        if position == .down{
+            UIView.animate(withDuration: animationTimeInterval){
+                self.constraintsToBottomBlocks()
+            }
         }else{
-            
+            UIView.animate(withDuration: animationTimeInterval){
+                self.constraintsToUpBlocks(keyboardFrame)
+            }
         }
     }
     
@@ -204,10 +205,8 @@ class WriterViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(keyboardHide))
         view.addGestureRecognizer(tapGesture)
         
-        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -216,39 +215,29 @@ class WriterViewController: UIViewController {
         self.view.addSubview(mainView)
         self.view.addSubview(saveButton)
         self.view.addSubview(titleTextView)
+        self.view.addSubview(helpButton)
         self.mainView.addSubview(self.textView)
         
-        // Save Button
-        NSLayoutConstraint.activate([
-            saveButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 15),
-            saveButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -15),
-            saveButton.heightAnchor.constraint(equalToConstant: 70),
-            saveButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -30),
-        ])
+    }
+    
+    func constraintsToUpBlocks(_ keyboard : CGRect){
+        helpButton.frame = .init(x: LEFT_CONST, y: keyboard.minY - 85, width: self.blockWidth/2 - 5, height: 55)
         
-        // Title Text Field
-        NSLayoutConstraint.activate([
-            titleTextView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 15),
-            titleTextView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -15),
-            titleTextView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 10),
-            titleTextView.heightAnchor.constraint(equalToConstant: 50),
-        ])
+        saveButton.frame = .init(x: self.helpButton.frame.maxX + 10, y: keyboard.minY - 85, width: self.blockWidth/2 - 5, height: 55)
         
-        // Main Text Field View
-        NSLayoutConstraint.activate([
-            mainView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 15),
-            mainView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -15),
-            mainView.topAnchor.constraint(equalTo: self.titleTextView.safeAreaLayoutGuide.bottomAnchor, constant: 5),
-            mainView.bottomAnchor.constraint(equalTo: self.saveButton.topAnchor, constant: -10),
-        ])
+        mainView.frame = .init(x: self.LEFT_CONST, y: titleTextView.frame.maxY, width: self.blockWidth, height: self.helpButton.frame.minY - titleTextView.frame.maxY - 15)
         
-        // Main Text Field
-        NSLayoutConstraint.activate([
-            textView.topAnchor.constraint(equalTo: self.mainView.topAnchor, constant: 15),
-            textView.leftAnchor.constraint(equalTo: self.mainView.leftAnchor, constant: 15),
-            textView.rightAnchor.constraint(equalTo: self.mainView.rightAnchor, constant: -15),
-            textView.bottomAnchor.constraint(equalTo: self.mainView.bottomAnchor, constant: -15),
-        ])
+        textView.frame = .init(x: 10, y: 10, width: self.mainView.frame.width - 10, height: self.mainView.frame.height-10)
+    }
+    
+    func constraintsToBottomBlocks(){
+        helpButton.frame = .init(x: LEFT_CONST, y: self.view.safeAreaLayoutGuide.layoutFrame.maxY - 85, width: self.blockWidth/2 - 5, height: 55)
+        
+        saveButton.frame = .init(x: self.helpButton.frame.maxX + 10, y: self.view.safeAreaLayoutGuide.layoutFrame.maxY - 85, width: self.blockWidth/2 - 5, height: 55)
+        
+        mainView.frame = .init(x: self.LEFT_CONST, y: titleTextView.frame.maxY, width: self.blockWidth, height: self.helpButton.frame.minY - titleTextView.frame.maxY - 15)
+        
+        textView.frame = .init(x: 10, y: 10, width: self.mainView.frame.width - 10, height: self.mainView.frame.height-10)
     }
 
 }
