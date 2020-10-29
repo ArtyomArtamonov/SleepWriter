@@ -7,22 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		925FA54725487EF9009574DB /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 925FA53C25487EF9009574DB /* Rubik-MediumItalic.ttf */; };
+		925FA54825487EF9009574DB /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 925FA53D25487EF9009574DB /* Rubik-Bold.ttf */; };
+		925FA54925487EF9009574DB /* SIL Open Font License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 925FA53E25487EF9009574DB /* SIL Open Font License.txt */; };
+		925FA54A25487EF9009574DB /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 925FA53F25487EF9009574DB /* Rubik-Light.ttf */; };
+		925FA54B25487EF9009574DB /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 925FA54025487EF9009574DB /* Rubik-Medium.ttf */; };
+		925FA54C25487EF9009574DB /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 925FA54125487EF9009574DB /* Rubik-Black.ttf */; };
+		925FA54D25487EF9009574DB /* Rubik-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 925FA54225487EF9009574DB /* Rubik-Italic.ttf */; };
+		925FA54E25487EF9009574DB /* Rubik-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 925FA54325487EF9009574DB /* Rubik-LightItalic.ttf */; };
+		925FA54F25487EF9009574DB /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 925FA54425487EF9009574DB /* Rubik-BlackItalic.ttf */; };
+		925FA55025487EF9009574DB /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 925FA54525487EF9009574DB /* Rubik-Regular.ttf */; };
+		925FA55125487EF9009574DB /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 925FA54625487EF9009574DB /* Rubik-BoldItalic.ttf */; };
+		92885C6E254A6D7F008A6510 /* MainPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92885C6D254A6D7E008A6510 /* MainPageController.swift */; };
+		92885C75254A808C008A6510 /* EditDreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92885C74254A808B008A6510 /* EditDreamViewController.swift */; };
 		BF0779802506815C00FF8F05 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF07797F2506815C00FF8F05 /* UIColor.swift */; };
-		BF648D382505328300AF99F7 /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF648D2D2505328300AF99F7 /* Rubik-BoldItalic.ttf */; };
-		BF648D392505328300AF99F7 /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF648D2E2505328300AF99F7 /* Rubik-Light.ttf */; };
-		BF648D3A2505328300AF99F7 /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF648D2F2505328300AF99F7 /* Rubik-Medium.ttf */; };
-		BF648D3B2505328300AF99F7 /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF648D302505328300AF99F7 /* Rubik-BlackItalic.ttf */; };
-		BF648D3C2505328300AF99F7 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF648D312505328300AF99F7 /* Rubik-Regular.ttf */; };
-		BF648D3D2505328300AF99F7 /* SIL Open Font License.txt in Resources */ = {isa = PBXBuildFile; fileRef = BF648D322505328300AF99F7 /* SIL Open Font License.txt */; };
-		BF648D3E2505328300AF99F7 /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF648D332505328300AF99F7 /* Rubik-Black.ttf */; };
-		BF648D3F2505328300AF99F7 /* Rubik-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF648D342505328300AF99F7 /* Rubik-LightItalic.ttf */; };
-		BF648D402505328300AF99F7 /* Rubik-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF648D352505328300AF99F7 /* Rubik-Italic.ttf */; };
-		BF648D412505328300AF99F7 /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF648D362505328300AF99F7 /* Rubik-Bold.ttf */; };
-		BF648D422505328300AF99F7 /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF648D372505328300AF99F7 /* Rubik-MediumItalic.ttf */; };
-		BF648D452505382900AF99F7 /* WriterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF648D442505382900AF99F7 /* WriterViewController.swift */; };
-		BF648D472505383400AF99F7 /* DreamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF648D462505383400AF99F7 /* DreamsViewController.swift */; };
 		BF648D4A25053D4B00AF99F7 /* Dream.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF648D4925053D4B00AF99F7 /* Dream.swift */; };
-		BF7823CE2535FF8B00F3729A /* DreamReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7823CD2535FF8B00F3729A /* DreamReadViewController.swift */; };
 		BFB3A49E250BFB3700736E3F /* DreamViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB3A49D250BFB3700736E3F /* DreamViewCell.swift */; };
 		BFBB0214250E2F4900F4775A /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBB0213250E2F4900F4775A /* Files.swift */; };
 		BFBB0216250E306A00F4775A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBB0215250E306A00F4775A /* Config.swift */; };
@@ -36,24 +35,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		925FA53C25487EF9009574DB /* Rubik-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-MediumItalic.ttf"; sourceTree = "<group>"; };
+		925FA53D25487EF9009574DB /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
+		925FA53E25487EF9009574DB /* SIL Open Font License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SIL Open Font License.txt"; sourceTree = "<group>"; };
+		925FA53F25487EF9009574DB /* Rubik-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Light.ttf"; sourceTree = "<group>"; };
+		925FA54025487EF9009574DB /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
+		925FA54125487EF9009574DB /* Rubik-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Black.ttf"; sourceTree = "<group>"; };
+		925FA54225487EF9009574DB /* Rubik-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Italic.ttf"; sourceTree = "<group>"; };
+		925FA54325487EF9009574DB /* Rubik-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-LightItalic.ttf"; sourceTree = "<group>"; };
+		925FA54425487EF9009574DB /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
+		925FA54525487EF9009574DB /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
+		925FA54625487EF9009574DB /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BoldItalic.ttf"; sourceTree = "<group>"; };
+		92885C6D254A6D7E008A6510 /* MainPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageController.swift; sourceTree = "<group>"; };
+		92885C74254A808B008A6510 /* EditDreamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDreamViewController.swift; sourceTree = "<group>"; };
 		A09E44EC43C91C67B93887A4 /* Pods-SleepWriter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SleepWriter.debug.xcconfig"; path = "Target Support Files/Pods-SleepWriter/Pods-SleepWriter.debug.xcconfig"; sourceTree = "<group>"; };
 		A6BE511E56573F92F224028C /* Pods_SleepWriter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SleepWriter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF07797F2506815C00FF8F05 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		BF648D2D2505328300AF99F7 /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-BoldItalic.ttf"; path = "../../../../Rubik/Rubik-BoldItalic.ttf"; sourceTree = "<group>"; };
-		BF648D2E2505328300AF99F7 /* Rubik-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-Light.ttf"; path = "../../../../Rubik/Rubik-Light.ttf"; sourceTree = "<group>"; };
-		BF648D2F2505328300AF99F7 /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-Medium.ttf"; path = "../../../../Rubik/Rubik-Medium.ttf"; sourceTree = "<group>"; };
-		BF648D302505328300AF99F7 /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-BlackItalic.ttf"; path = "../../../../Rubik/Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
-		BF648D312505328300AF99F7 /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-Regular.ttf"; path = "../../../../Rubik/Rubik-Regular.ttf"; sourceTree = "<group>"; };
-		BF648D322505328300AF99F7 /* SIL Open Font License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "SIL Open Font License.txt"; path = "../../../../Rubik/SIL Open Font License.txt"; sourceTree = "<group>"; };
-		BF648D332505328300AF99F7 /* Rubik-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-Black.ttf"; path = "../../../../Rubik/Rubik-Black.ttf"; sourceTree = "<group>"; };
-		BF648D342505328300AF99F7 /* Rubik-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-LightItalic.ttf"; path = "../../../../Rubik/Rubik-LightItalic.ttf"; sourceTree = "<group>"; };
-		BF648D352505328300AF99F7 /* Rubik-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-Italic.ttf"; path = "../../../../Rubik/Rubik-Italic.ttf"; sourceTree = "<group>"; };
-		BF648D362505328300AF99F7 /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-Bold.ttf"; path = "../../../../Rubik/Rubik-Bold.ttf"; sourceTree = "<group>"; };
-		BF648D372505328300AF99F7 /* Rubik-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Rubik-MediumItalic.ttf"; path = "../../../../Rubik/Rubik-MediumItalic.ttf"; sourceTree = "<group>"; };
-		BF648D442505382900AF99F7 /* WriterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriterViewController.swift; sourceTree = "<group>"; };
-		BF648D462505383400AF99F7 /* DreamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamsViewController.swift; sourceTree = "<group>"; };
 		BF648D4925053D4B00AF99F7 /* Dream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dream.swift; sourceTree = "<group>"; };
-		BF7823CD2535FF8B00F3729A /* DreamReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamReadViewController.swift; sourceTree = "<group>"; };
 		BFB3A49D250BFB3700736E3F /* DreamViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamViewCell.swift; sourceTree = "<group>"; };
 		BFBB0213250E2F4900F4775A /* Files.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Files.swift; sourceTree = "<group>"; };
 		BFBB0215250E306A00F4775A /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -88,6 +86,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		925FA53B25487EF9009574DB /* Rubik */ = {
+			isa = PBXGroup;
+			children = (
+				925FA53C25487EF9009574DB /* Rubik-MediumItalic.ttf */,
+				925FA53D25487EF9009574DB /* Rubik-Bold.ttf */,
+				925FA53E25487EF9009574DB /* SIL Open Font License.txt */,
+				925FA53F25487EF9009574DB /* Rubik-Light.ttf */,
+				925FA54025487EF9009574DB /* Rubik-Medium.ttf */,
+				925FA54125487EF9009574DB /* Rubik-Black.ttf */,
+				925FA54225487EF9009574DB /* Rubik-Italic.ttf */,
+				925FA54325487EF9009574DB /* Rubik-LightItalic.ttf */,
+				925FA54425487EF9009574DB /* Rubik-BlackItalic.ttf */,
+				925FA54525487EF9009574DB /* Rubik-Regular.ttf */,
+				925FA54625487EF9009574DB /* Rubik-BoldItalic.ttf */,
+			);
+			path = Rubik;
+			sourceTree = "<group>";
+		};
 		96C3BAA03C7E426C5A38AB19 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,31 +134,12 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		BF648D2C2505326900AF99F7 /* Rubik */ = {
-			isa = PBXGroup;
-			children = (
-				BF648D332505328300AF99F7 /* Rubik-Black.ttf */,
-				BF648D302505328300AF99F7 /* Rubik-BlackItalic.ttf */,
-				BF648D362505328300AF99F7 /* Rubik-Bold.ttf */,
-				BF648D2D2505328300AF99F7 /* Rubik-BoldItalic.ttf */,
-				BF648D352505328300AF99F7 /* Rubik-Italic.ttf */,
-				BF648D2E2505328300AF99F7 /* Rubik-Light.ttf */,
-				BF648D342505328300AF99F7 /* Rubik-LightItalic.ttf */,
-				BF648D2F2505328300AF99F7 /* Rubik-Medium.ttf */,
-				BF648D372505328300AF99F7 /* Rubik-MediumItalic.ttf */,
-				BF648D312505328300AF99F7 /* Rubik-Regular.ttf */,
-				BF648D322505328300AF99F7 /* SIL Open Font License.txt */,
-			);
-			path = Rubik;
-			sourceTree = "<group>";
-		};
 		BF648D432505331000AF99F7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				BFDF4BB325040209006F020D /* MainViewController.swift */,
-				BF648D442505382900AF99F7 /* WriterViewController.swift */,
-				BF648D462505383400AF99F7 /* DreamsViewController.swift */,
-				BF7823CD2535FF8B00F3729A /* DreamReadViewController.swift */,
+				92885C6D254A6D7E008A6510 /* MainPageController.swift */,
+				92885C74254A808B008A6510 /* EditDreamViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -192,7 +189,7 @@
 		BFDF4BAE25040209006F020D /* SleepWriter */ = {
 			isa = PBXGroup;
 			children = (
-				BF648D2C2505326900AF99F7 /* Rubik */,
+				925FA53B25487EF9009574DB /* Rubik */,
 				BF648D2A2505321E00AF99F7 /* Classes */,
 				BFDF4BAF25040209006F020D /* AppDelegate.swift */,
 				BFDF4BB125040209006F020D /* SceneDelegate.swift */,
@@ -264,20 +261,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF648D412505328300AF99F7 /* Rubik-Bold.ttf in Resources */,
 				BFDF4BBC2504020A006F020D /* LaunchScreen.storyboard in Resources */,
-				BF648D3C2505328300AF99F7 /* Rubik-Regular.ttf in Resources */,
-				BF648D382505328300AF99F7 /* Rubik-BoldItalic.ttf in Resources */,
-				BF648D3F2505328300AF99F7 /* Rubik-LightItalic.ttf in Resources */,
-				BF648D3D2505328300AF99F7 /* SIL Open Font License.txt in Resources */,
-				BF648D392505328300AF99F7 /* Rubik-Light.ttf in Resources */,
-				BF648D3A2505328300AF99F7 /* Rubik-Medium.ttf in Resources */,
-				BF648D3B2505328300AF99F7 /* Rubik-BlackItalic.ttf in Resources */,
-				BF648D402505328300AF99F7 /* Rubik-Italic.ttf in Resources */,
 				BFDF4BB92504020A006F020D /* Assets.xcassets in Resources */,
-				BF648D422505328300AF99F7 /* Rubik-MediumItalic.ttf in Resources */,
-				BF648D3E2505328300AF99F7 /* Rubik-Black.ttf in Resources */,
+				925FA54F25487EF9009574DB /* Rubik-BlackItalic.ttf in Resources */,
 				BFDF4BB725040209006F020D /* Main.storyboard in Resources */,
+				925FA54E25487EF9009574DB /* Rubik-LightItalic.ttf in Resources */,
+				925FA55125487EF9009574DB /* Rubik-BoldItalic.ttf in Resources */,
+				925FA54925487EF9009574DB /* SIL Open Font License.txt in Resources */,
+				925FA54725487EF9009574DB /* Rubik-MediumItalic.ttf in Resources */,
+				925FA54A25487EF9009574DB /* Rubik-Light.ttf in Resources */,
+				925FA54D25487EF9009574DB /* Rubik-Italic.ttf in Resources */,
+				925FA54C25487EF9009574DB /* Rubik-Black.ttf in Resources */,
+				925FA55025487EF9009574DB /* Rubik-Regular.ttf in Resources */,
+				925FA54825487EF9009574DB /* Rubik-Bold.ttf in Resources */,
+				925FA54B25487EF9009574DB /* Rubik-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,13 +329,12 @@
 			files = (
 				BFDF4BB425040209006F020D /* MainViewController.swift in Sources */,
 				BF0779802506815C00FF8F05 /* UIColor.swift in Sources */,
-				BF7823CE2535FF8B00F3729A /* DreamReadViewController.swift in Sources */,
+				92885C75254A808C008A6510 /* EditDreamViewController.swift in Sources */,
 				BFBB0214250E2F4900F4775A /* Files.swift in Sources */,
 				BFB3A49E250BFB3700736E3F /* DreamViewCell.swift in Sources */,
-				BF648D472505383400AF99F7 /* DreamsViewController.swift in Sources */,
-				BF648D452505382900AF99F7 /* WriterViewController.swift in Sources */,
 				BFDF4BB025040209006F020D /* AppDelegate.swift in Sources */,
 				BFBB0216250E306A00F4775A /* Config.swift in Sources */,
+				92885C6E254A6D7F008A6510 /* MainPageController.swift in Sources */,
 				BFDF4BB225040209006F020D /* SceneDelegate.swift in Sources */,
 				BF648D4A25053D4B00AF99F7 /* Dream.swift in Sources */,
 			);
@@ -486,14 +482,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J7XTQZH8VJ;
+				DEVELOPMENT_TEAM = H72YUS24CN;
 				INFOPLIST_FILE = SleepWriter/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.art3aofficial.SleepWriter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsatualdypov.SleepWriter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -506,14 +502,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J7XTQZH8VJ;
+				DEVELOPMENT_TEAM = H72YUS24CN;
 				INFOPLIST_FILE = SleepWriter/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.art3aofficial.SleepWriter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsatualdypov.SleepWriter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

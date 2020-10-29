@@ -19,7 +19,6 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-
 import UIKit
 
 @IBDesignable open class STTextView : UITextView {
@@ -51,65 +50,16 @@ import UIKit
         }
     }
     
-    
-    
-    
-// ART3A
-    
-    public var placeholderFont : UIFont = .boldSystemFont(ofSize: 25){
+    public override var textContainerInset: UIEdgeInsets {
         didSet {
-            self.placeholderTextView.font = placeholderFont
+            self.placeholderTextView.textContainerInset = self.textContainerInset
         }
     }
-    
-    /// Alignment of placeholder
-    public var placeholderAlignment : NSTextAlignment = .left{
-        didSet {
-            self.placeholderTextView.textAlignment = placeholderAlignment
-        }
-    }
-    
-    /// Vertical alignment of placeholder
-    public var placeholderVerticalAlignment : UIControl.ContentMode = .topLeft{
-        didSet {
-//            var edges = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-            var constraints : [NSLayoutConstraint] = []
-            let pva = placeholderVerticalAlignment
-            
-            if(pva == .topLeft || pva == .top || pva == .topRight){
-                constraints.append(placeholderTextView.topAnchor.constraint(equalTo: self.topAnchor))
-            }
-            else if(pva == .bottom || pva == .bottomLeft || pva == .bottomRight){
-                constraints.append(placeholderTextView.bottomAnchor.constraint(equalTo: self.bottomAnchor))
-            }
-            
-            if(pva == .center){
-                constraints.append(placeholderTextView.centerYAnchor.constraint(equalTo: self.centerYAnchor))
-                constraints.append(placeholderTextView.centerXAnchor.constraint(equalTo: self.centerXAnchor))
-                constraints.append(placeholderTextView.widthAnchor.constraint(equalToConstant: 100))
-                constraints.append(placeholderTextView.heightAnchor.constraint(equalToConstant: 30))
-                placeholderTextView.textAlignment = .center
-            }
-            // TODO: make placeholder centered
-            NSLayoutConstraint.activate(constraints)
-        }
-    
-    }
-    
-// /ART3A
-    
-    
     
     // We have to check if text property is changing at runtime.
     public override var text: String! {
         didSet {
             self.placeholderTextView.isHidden = !self.text.isEmpty
-        }
-    }
-    
-    public override var contentInset: UIEdgeInsets {
-        didSet {
-            self.placeholderTextView.contentInset = self.contentInset
         }
     }
     
@@ -122,7 +72,7 @@ import UIKit
         textView.font = self.font
         
         textView.textAlignment = self.textAlignment
-        textView.contentInset = self.contentInset
+        textView.textContainerInset = self.textContainerInset
         
         textView.frame = self.bounds
         
@@ -131,8 +81,13 @@ import UIKit
         textView.isUserInteractionEnabled = false
         textView.translatesAutoresizingMaskIntoConstraints = false
         
+        textView.isHidden = !self.text.isEmpty
+        
         return textView
     }()
+    
+    private var heightConstraint : NSLayoutConstraint?
+    private var originHeightConstant : CGFloat?
     
     @objc private func textDidBeginEditing(_ notification : Notification) -> () {
         if self.text.isEmpty {
@@ -140,10 +95,17 @@ import UIKit
                 placeholderTextView.isHidden = true
             }
         }
+        updateContentSize()
     }
     
     @objc private func textDidChange(_ notification : Notification) -> () {
-        placeholderTextView.isHidden = !self.text.isEmpty
+        if shouldHidePlaceholderOnEditing {
+            if self.text.isEmpty {
+                placeholderTextView.isHidden = true
+            }
+        } else {
+            placeholderTextView.isHidden = !self.text.isEmpty
+        }
     }
    
     @objc private func textDidEndEditing(_ notification : Notification) -> () {
@@ -152,16 +114,44 @@ import UIKit
                 placeholderTextView.isHidden = false
             }
         }
+        updateContentSize()
     }
     
     // Method is used to update the placeholderTextView whenever
-    // the TextView changes in Interface Builder.
+    // the UITextView changes in Interface Builder.
     private func updatePlaceholder() -> () {
         placeholderTextView.text = placeholder
         placeholderTextView.textColor = placeholderColor
         
         placeholderTextView.font = self.font
         placeholderTextView.textAlignment = self.textAlignment
+        
+        placeholderTextView.frame = self.bounds
+    }
+    
+    // The content should be always visible
+    // even if it's just a placeholder text, so
+    // this function is solving the problem when a placeholder text
+    // did not fit in the UITextView if the height constraint's constant
+    // is less than the placeholder text.
+    private func updateContentSize() -> () {
+        if self.text.isEmpty {
+            if let constraint = heightConstraint, let originHeight = originHeightConstant {
+                let placeholderContentHeight = placeholderTextView.contentSize.height
+                
+                if shouldHidePlaceholderOnEditing && isFirstResponder {
+                    if originHeight < placeholderContentHeight {
+                        constraint.constant = originHeight
+                    }
+                } else {
+                    if constraint.constant < placeholderContentHeight {
+                        constraint.constant = placeholderContentHeight
+                    }
+                }
+            }
+        }
+        
+        placeholderTextView.frame = self.bounds
     }
     
     private func signForNotifications() -> () {
@@ -185,7 +175,18 @@ import UIKit
     public override func layoutSubviews() {
         super.layoutSubviews()
         
-        placeholderTextView.frame = self.bounds
+        // Getting an initial value of the height constraint's constant
+        if heightConstraint == nil {
+            for constraint in self.constraints {
+                if constraint.firstAttribute == .height {
+                    heightConstraint = constraint
+                    originHeightConstant = constraint.constant
+                    break
+                }
+            }
+        }
+        
+        updateContentSize()
     }
     
     public override init(frame: CGRect, textContainer: NSTextContainer?) {

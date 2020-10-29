@@ -9,6 +9,10 @@
 import UIKit
 
 extension UIColor {
+    
+    public static let applicationLightColor : UIColor = UIColor(named: "Application Light Color")!
+    public static let applicationDarkColor : UIColor = UIColor(named: "Application Dark Color")!
+    
     public convenience init?(hex: String) {
         let r, g, b, a: CGFloat
 

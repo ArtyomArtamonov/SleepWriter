@@ -9,7 +9,7 @@
 import Foundation
 
 // Dream structure to save on device
-struct Dream : Codable{
+struct Dream : Codable {
     let date : Float
     let title : String
     let text : String

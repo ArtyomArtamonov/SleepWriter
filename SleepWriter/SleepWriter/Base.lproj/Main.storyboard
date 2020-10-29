@@ -1,24 +1,187 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Rubik-Bold.ttf">
+            <string>Rubik-Bold</string>
+        </array>
+        <array key="Rubik-Regular.ttf">
+            <string>Rubik-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="SleepWriter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="Qbp-QH-PBu">
+                                <rect key="frame" x="136" y="627" width="103.5" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="SYY-zI-7Aa"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" systemColor="systemFillColor"/>
+                                <color key="currentPageIndicatorTintColor" systemColor="labelColor"/>
+                            </pageControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ucg-Zx-65w">
+                                <rect key="frame" x="0.0" y="16" width="375" height="603"/>
+                                <connections>
+                                    <segue destination="xjR-Ud-97Y" kind="embed" destinationCreationSelector="embedSegue:" id="u12-Kb-L8N"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Qbp-QH-PBu" firstAttribute="top" secondItem="ucg-Zx-65w" secondAttribute="bottom" constant="8" id="1KJ-5c-SJz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ucg-Zx-65w" secondAttribute="trailing" id="1VB-Vf-15Z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Qbp-QH-PBu" secondAttribute="bottom" constant="8" id="3wU-Hj-0ZX"/>
+                            <constraint firstItem="ucg-Zx-65w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="L12-l9-Hlu"/>
+                            <constraint firstItem="ucg-Zx-65w" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="b0y-bU-sfY"/>
+                            <constraint firstItem="Qbp-QH-PBu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cQm-Tc-5QG"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pageControl" destination="Qbp-QH-PBu" id="y1R-EU-XOw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="100" y="124"/>
+        </scene>
+        <!--Main Page Controller-->
+        <scene sceneID="wvq-7m-ouS">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="xjR-Ud-97Y" customClass="MainPageController" customModule="SleepWriter" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qjj-UK-yWl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="927" y="124"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1Yx-sO-lNo">
+            <objects>
+                <viewController storyboardIdentifier="dreamsVC" id="0EP-bn-fhk" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aWW-dy-toO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="zan-bh-9Or"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j6G-Kq-bf2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1686" y="439"/>
+        </scene>
+        <!--Edit Dream View Controller-->
+        <scene sceneID="Eb2-87-Err">
+            <objects>
+                <viewController storyboardIdentifier="editDreamVC" id="YiH-4m-Ww3" customClass="EditDreamViewController" customModule="SleepWriter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WCO-y3-Q9Y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QeG-3r-an6">
+                                <rect key="frame" x="16" y="0.0" width="343" height="32.5"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Rubik-Bold" family="Rubik" pointSize="26"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Go3-2u-mOd" customClass="STTextView" customModule="STTextView">
+                                <rect key="frame" x="16" y="48.5" width="343" height="539.5"/>
+                                <color key="backgroundColor" name="Application Light Color"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Start writing your dream..."/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" systemColor="placeholderTextColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="OY0-vY-HlB">
+                                <rect key="frame" x="16" y="604" width="343" height="55"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQl-WH-fxx">
+                                        <rect key="frame" x="0.0" y="0.0" width="167.5" height="55"/>
+                                        <color key="backgroundColor" name="Application Blue Color"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Bold" family="Rubik" pointSize="21"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Help"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E4M-fs-jyi">
+                                        <rect key="frame" x="175.5" y="0.0" width="167.5" height="55"/>
+                                        <color key="backgroundColor" name="Application Blue Color"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Bold" family="Rubik" pointSize="21"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Save"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="QTc-Rr-Dfe"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IXE-qK-nTq"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QeG-3r-an6" firstAttribute="centerX" secondItem="WCO-y3-Q9Y" secondAttribute="centerX" id="4Vo-l4-GYw"/>
+                            <constraint firstItem="Go3-2u-mOd" firstAttribute="top" secondItem="QeG-3r-an6" secondAttribute="bottom" constant="16" id="7tj-ML-3bb"/>
+                            <constraint firstItem="IXE-qK-nTq" firstAttribute="bottom" secondItem="OY0-vY-HlB" secondAttribute="bottom" constant="8" id="Jwk-1t-GYv"/>
+                            <constraint firstItem="OY0-vY-HlB" firstAttribute="top" secondItem="Go3-2u-mOd" secondAttribute="bottom" constant="16" id="MGg-ck-wQ8"/>
+                            <constraint firstItem="IXE-qK-nTq" firstAttribute="trailing" secondItem="QeG-3r-an6" secondAttribute="trailing" constant="16" id="PzL-JF-Ka7"/>
+                            <constraint firstItem="OY0-vY-HlB" firstAttribute="leading" secondItem="IXE-qK-nTq" secondAttribute="leading" constant="16" id="hc6-Sl-yuD"/>
+                            <constraint firstItem="Go3-2u-mOd" firstAttribute="leading" secondItem="IXE-qK-nTq" secondAttribute="leading" constant="16" id="j4z-yK-WL5"/>
+                            <constraint firstItem="QeG-3r-an6" firstAttribute="leading" secondItem="IXE-qK-nTq" secondAttribute="leading" constant="16" id="kTR-N8-2Nm"/>
+                            <constraint firstItem="QeG-3r-an6" firstAttribute="top" secondItem="IXE-qK-nTq" secondAttribute="top" id="sFd-lf-eb8"/>
+                            <constraint firstItem="OY0-vY-HlB" firstAttribute="centerX" secondItem="WCO-y3-Q9Y" secondAttribute="centerX" id="tdb-9r-vzy"/>
+                            <constraint firstItem="IXE-qK-nTq" firstAttribute="trailing" secondItem="Go3-2u-mOd" secondAttribute="trailing" constant="16" id="zTZ-WG-RcW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomConstraint" destination="Jwk-1t-GYv" id="qlC-VM-d5F"/>
+                        <outlet property="dreamTextView" destination="Go3-2u-mOd" id="69D-PL-nKQ"/>
+                        <outlet property="helpButton" destination="PQl-WH-fxx" id="MF4-DJ-5Zu"/>
+                        <outlet property="saveButton" destination="E4M-fs-jyi" id="Qtz-qc-wgT"/>
+                        <outlet property="titleTextField" destination="QeG-3r-an6" id="VyU-jK-XTE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="62F-vI-VFV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1687" y="-258"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="Application Blue Color">
+            <color red="0.0" green="0.875" blue="0.99988490343093872" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Application Light Color">
+            <color white="1" alpha="0.099877385258674622" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="placeholderTextColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemFillColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
