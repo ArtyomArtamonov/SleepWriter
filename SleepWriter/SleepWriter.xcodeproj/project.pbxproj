@@ -18,13 +18,17 @@
 		925FA54F25487EF9009574DB /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 925FA54425487EF9009574DB /* Rubik-BlackItalic.ttf */; };
 		925FA55025487EF9009574DB /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 925FA54525487EF9009574DB /* Rubik-Regular.ttf */; };
 		925FA55125487EF9009574DB /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 925FA54625487EF9009574DB /* Rubik-BoldItalic.ttf */; };
+		92680C5D254B1DD60032570C /* DreamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92680C5C254B1DD60032570C /* DreamCell.swift */; };
+		92680C62254B1EDF0032570C /* DreamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92680C61254B1EDF0032570C /* DreamsViewController.swift */; };
+		92680C72254B2C6C0032570C /* SleepWriter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92680C70254B2C6C0032570C /* SleepWriter.xcdatamodeld */; };
+		92680C78254B2D8A0032570C /* Dream+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92680C76254B2D8A0032570C /* Dream+CoreDataClass.swift */; };
+		92680C7C254B2FDA0032570C /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92680C7B254B2FDA0032570C /* CoreDataManager.swift */; };
+		92680C83254B32EC0032570C /* PersistanceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92680C82254B32EC0032570C /* PersistanceLayer.swift */; };
+		92680C86254B34370032570C /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92680C85254B34360032570C /* Date.swift */; };
 		92885C6E254A6D7F008A6510 /* MainPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92885C6D254A6D7E008A6510 /* MainPageController.swift */; };
 		92885C75254A808C008A6510 /* EditDreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92885C74254A808B008A6510 /* EditDreamViewController.swift */; };
+		92885C78254B1BAD008A6510 /* DreamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92885C77254B1BAB008A6510 /* DreamCell.xib */; };
 		BF0779802506815C00FF8F05 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF07797F2506815C00FF8F05 /* UIColor.swift */; };
-		BF648D4A25053D4B00AF99F7 /* Dream.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF648D4925053D4B00AF99F7 /* Dream.swift */; };
-		BFB3A49E250BFB3700736E3F /* DreamViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB3A49D250BFB3700736E3F /* DreamViewCell.swift */; };
-		BFBB0214250E2F4900F4775A /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBB0213250E2F4900F4775A /* Files.swift */; };
-		BFBB0216250E306A00F4775A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBB0215250E306A00F4775A /* Config.swift */; };
 		BFDF4BB025040209006F020D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4BAF25040209006F020D /* AppDelegate.swift */; };
 		BFDF4BB225040209006F020D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4BB125040209006F020D /* SceneDelegate.swift */; };
 		BFDF4BB425040209006F020D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4BB325040209006F020D /* MainViewController.swift */; };
@@ -46,15 +50,19 @@
 		925FA54425487EF9009574DB /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
 		925FA54525487EF9009574DB /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
 		925FA54625487EF9009574DB /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BoldItalic.ttf"; sourceTree = "<group>"; };
+		92680C5C254B1DD60032570C /* DreamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamCell.swift; sourceTree = "<group>"; };
+		92680C61254B1EDF0032570C /* DreamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamsViewController.swift; sourceTree = "<group>"; };
+		92680C71254B2C6C0032570C /* SleepWriter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SleepWriter.xcdatamodel; sourceTree = "<group>"; };
+		92680C76254B2D8A0032570C /* Dream+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dream+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		92680C7B254B2FDA0032570C /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		92680C82254B32EC0032570C /* PersistanceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceLayer.swift; sourceTree = "<group>"; };
+		92680C85254B34360032570C /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		92885C6D254A6D7E008A6510 /* MainPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageController.swift; sourceTree = "<group>"; };
 		92885C74254A808B008A6510 /* EditDreamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDreamViewController.swift; sourceTree = "<group>"; };
+		92885C77254B1BAB008A6510 /* DreamCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DreamCell.xib; sourceTree = "<group>"; };
 		A09E44EC43C91C67B93887A4 /* Pods-SleepWriter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SleepWriter.debug.xcconfig"; path = "Target Support Files/Pods-SleepWriter/Pods-SleepWriter.debug.xcconfig"; sourceTree = "<group>"; };
 		A6BE511E56573F92F224028C /* Pods_SleepWriter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SleepWriter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF07797F2506815C00FF8F05 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		BF648D4925053D4B00AF99F7 /* Dream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dream.swift; sourceTree = "<group>"; };
-		BFB3A49D250BFB3700736E3F /* DreamViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamViewCell.swift; sourceTree = "<group>"; };
-		BFBB0213250E2F4900F4775A /* Files.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Files.swift; sourceTree = "<group>"; };
-		BFBB0215250E306A00F4775A /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		BFDF4BAC25040209006F020D /* SleepWriter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepWriter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFDF4BAF25040209006F020D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFDF4BB125040209006F020D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +112,41 @@
 			path = Rubik;
 			sourceTree = "<group>";
 		};
+		92680C5F254B1EC30032570C /* DreamCell */ = {
+			isa = PBXGroup;
+			children = (
+				92885C77254B1BAB008A6510 /* DreamCell.xib */,
+				92680C5C254B1DD60032570C /* DreamCell.swift */,
+			);
+			path = DreamCell;
+			sourceTree = "<group>";
+		};
+		92680C64254B250E0032570C /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				92680C70254B2C6C0032570C /* SleepWriter.xcdatamodeld */,
+			);
+			path = DataModels;
+			sourceTree = "<group>";
+		};
+		92680C74254B2D760032570C /* PersistanceLayer */ = {
+			isa = PBXGroup;
+			children = (
+				92680C75254B2D760032570C /* CoreData */,
+				92680C82254B32EC0032570C /* PersistanceLayer.swift */,
+			);
+			path = PersistanceLayer;
+			sourceTree = "<group>";
+		};
+		92680C75254B2D760032570C /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				92680C7B254B2FDA0032570C /* CoreDataManager.swift */,
+				92680C76254B2D8A0032570C /* Dream+CoreDataClass.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		96C3BAA03C7E426C5A38AB19 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,7 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				BF07797F2506815C00FF8F05 /* UIColor.swift */,
-				BFBB0213250E2F4900F4775A /* Files.swift */,
+				92680C85254B34360032570C /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -127,8 +170,6 @@
 			children = (
 				BFB3A49C250BFB1800736E3F /* Views */,
 				BF07797E2506814A00FF8F05 /* Extensions */,
-				BF648D4B25053EBB00AF99F7 /* Services */,
-				BF648D4825053D3700AF99F7 /* Structures */,
 				BF648D432505331000AF99F7 /* ViewControllers */,
 			);
 			path = Classes;
@@ -140,30 +181,15 @@
 				BFDF4BB325040209006F020D /* MainViewController.swift */,
 				92885C6D254A6D7E008A6510 /* MainPageController.swift */,
 				92885C74254A808B008A6510 /* EditDreamViewController.swift */,
+				92680C61254B1EDF0032570C /* DreamsViewController.swift */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		BF648D4825053D3700AF99F7 /* Structures */ = {
-			isa = PBXGroup;
-			children = (
-				BF648D4925053D4B00AF99F7 /* Dream.swift */,
-			);
-			path = Structures;
-			sourceTree = "<group>";
-		};
-		BF648D4B25053EBB00AF99F7 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				BFBB0215250E306A00F4775A /* Config.swift */,
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		BFB3A49C250BFB1800736E3F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BFB3A49D250BFB3700736E3F /* DreamViewCell.swift */,
+				92680C5F254B1EC30032570C /* DreamCell */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -190,6 +216,8 @@
 			isa = PBXGroup;
 			children = (
 				925FA53B25487EF9009574DB /* Rubik */,
+				92680C64254B250E0032570C /* DataModels */,
+				92680C74254B2D760032570C /* PersistanceLayer */,
 				BF648D2A2505321E00AF99F7 /* Classes */,
 				BFDF4BAF25040209006F020D /* AppDelegate.swift */,
 				BFDF4BB125040209006F020D /* SceneDelegate.swift */,
@@ -263,6 +291,7 @@
 			files = (
 				BFDF4BBC2504020A006F020D /* LaunchScreen.storyboard in Resources */,
 				BFDF4BB92504020A006F020D /* Assets.xcassets in Resources */,
+				92885C78254B1BAD008A6510 /* DreamCell.xib in Resources */,
 				925FA54F25487EF9009574DB /* Rubik-BlackItalic.ttf in Resources */,
 				BFDF4BB725040209006F020D /* Main.storyboard in Resources */,
 				925FA54E25487EF9009574DB /* Rubik-LightItalic.ttf in Resources */,
@@ -327,16 +356,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92680C62254B1EDF0032570C /* DreamsViewController.swift in Sources */,
+				92680C86254B34370032570C /* Date.swift in Sources */,
 				BFDF4BB425040209006F020D /* MainViewController.swift in Sources */,
+				92680C72254B2C6C0032570C /* SleepWriter.xcdatamodeld in Sources */,
 				BF0779802506815C00FF8F05 /* UIColor.swift in Sources */,
 				92885C75254A808C008A6510 /* EditDreamViewController.swift in Sources */,
-				BFBB0214250E2F4900F4775A /* Files.swift in Sources */,
-				BFB3A49E250BFB3700736E3F /* DreamViewCell.swift in Sources */,
 				BFDF4BB025040209006F020D /* AppDelegate.swift in Sources */,
-				BFBB0216250E306A00F4775A /* Config.swift in Sources */,
+				92680C5D254B1DD60032570C /* DreamCell.swift in Sources */,
+				92680C78254B2D8A0032570C /* Dream+CoreDataClass.swift in Sources */,
+				92680C7C254B2FDA0032570C /* CoreDataManager.swift in Sources */,
 				92885C6E254A6D7F008A6510 /* MainPageController.swift in Sources */,
 				BFDF4BB225040209006F020D /* SceneDelegate.swift in Sources */,
-				BF648D4A25053D4B00AF99F7 /* Dream.swift in Sources */,
+				92680C83254B32EC0032570C /* PersistanceLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,6 +570,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		92680C70254B2C6C0032570C /* SleepWriter.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				92680C71254B2C6C0032570C /* SleepWriter.xcdatamodel */,
+			);
+			currentVersion = 92680C71254B2C6C0032570C /* SleepWriter.xcdatamodel */;
+			path = SleepWriter.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BFDF4BA425040209006F020D /* Project object */;
 }

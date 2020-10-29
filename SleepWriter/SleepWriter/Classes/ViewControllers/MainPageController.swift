@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol MainPageControllerDelegate : class {
+    func add(dream : Dream) -> ()
+}
+
 class MainPageController : UIPageViewController {
     
     public weak var rootDelegate : MainViewControllerDelegate?
@@ -20,8 +24,11 @@ class MainPageController : UIPageViewController {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let editVC = storyboard.instantiateViewController(identifier: "editDreamVC")
-        let dreamsVC = storyboard.instantiateViewController(identifier: "dreamsVC")
+        guard let editVC = storyboard.instantiateViewController(identifier: "editDreamVC") as? EditDreamViewController,
+              let dreamsVC = storyboard.instantiateViewController(identifier: "dreamsVC") as? DreamsViewController
+        else { return }
+        
+        editVC.delegate = self
         
         self.pages.append(editVC)
         self.pages.append(dreamsVC)
@@ -32,6 +39,15 @@ class MainPageController : UIPageViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.configurePages()
+    }
+}
+
+extension MainPageController : MainPageControllerDelegate {
+    internal func add(dream: Dream) -> () {
+        #warning("TODO: Make more smart and generic determination.")
+        
+        guard let dreamsViewController = self.pages.last as? DreamsViewController else { return }
+        dreamsViewController.add(dream: dream)
     }
 }
 

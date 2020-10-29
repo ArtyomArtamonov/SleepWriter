@@ -19,6 +19,26 @@ class EditDreamViewController: UIViewController {
     
     @IBOutlet private weak var bottomConstraint : NSLayoutConstraint!
     
+    public weak var delegate : MainPageControllerDelegate?
+    
+    @IBAction private func saveButtonPressed(_ sender : UIButton) -> () {
+        #warning("TODO: Create alert that shows message to fill all fields.")
+        
+        guard !self.titleTextField.text!.isEmpty,
+              !self.dreamTextView.text.isEmpty
+        else { return }
+        
+        let newDream = Dream(title: self.titleTextField.text!,
+                             text: self.dreamTextView.text,
+                             date: .init(), lastOpened: .init())
+        
+        self.titleTextField.text = ""
+        self.dreamTextView.text = ""
+        
+        self.delegate?.add(dream: newDream)
+        PersistanceLayer.coreData.save()
+    }
+    
     @objc private func keyboardWillShow(notification: NSNotification) -> () {
         guard let userInfo = notification.userInfo,
               let keyboardSize = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue,
