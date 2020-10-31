@@ -2,80 +2,53 @@
 //  DreamsViewController.swift
 //  SleepWriter
 //
-//  Created by Artyom Artamonov on 06.09.2020.
+//  Created by Tamerlan Satualdypov on 29.10.2020.
 //  Copyright © 2020 Artyom Artamonov. All rights reserved.
 //
 
 import UIKit
 
-protocol DreamsViewControllerDelegate{
-    func updateCells() -> Void
-}
-
-class DreamsViewController: UITableViewController, DreamsViewControllerDelegate {
+class DreamsViewController: UITableViewController {
     
-    var mainVC : MainViewControllerProtocol?
+    private var dreamsData : [Dream] = .init()
     
-    let cellId = "DreamTableViewCell"
+    private func fetchData() -> () {
+        self.dreamsData = PersistanceLayer.coreData.fetch(type: Dream.self, dateOrderAscending: false)
+    }
     
-    var dreamsData : [Dream] = []
+    private func initialConfiguration() -> () {
+        self.fetchData()
+        self.tableView.register(UINib(nibName: "DreamCell", bundle: nil), forCellReuseIdentifier: "dreamCell")
+    }
     
-    public func updateCells() {
-        reloadDreams()
+    public func add(dream : Dream) -> () {
+        #warning("TODO: Add more logic here.")
+        
+        self.dreamsData.insert(dream, at: 0)
         self.tableView.reloadData()
     }
     
-    private func reloadDreams(){
-        if let data = try? JSONSerialization.loadJSON(withFilename: fileName){
-            dreamsData = data as! [Dream]
-        }
-    }
-    
-    override func viewDidLoad() {
+    override func viewDidLoad() -> () {
         super.viewDidLoad()
-        
-        self.modalPresentationStyle = .overCurrentContext
-        
-        self.view.backgroundColor = .clear
-        self.tableView.separatorStyle = .none
-        self.tableView.register(DreamTableViewCell.self, forCellReuseIdentifier: cellId)
-        
-        
-        
-//        // Load info
-//        // Write nil:
-//        try? JSONSerialization.save(jsonObject: dreamsData, toFilename: fileName)
-//        // End write nil
-        reloadDreams()
-        
-        
+        self.initialConfiguration()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
+
+    // MARK: - Table view data source
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dreamsData.count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! DreamTableViewCell
-        
-        let dream : Dream = dreamsData[indexPath.row]
-        
-        cell.setCell(title: dream.title, text: floatTimeToDateString(since1970: dream.date))
-        
-        // Configure cell
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let dream = dreamsData[indexPath.row]
-        self.present(DreamReadViewController(dream: dream), animated: true)
+        return self.dreamsData.count
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "dreamCell") as! DreamCell
+        
+        cell.display(title: self.dreamsData[indexPath.row].title)
+        cell.display(date: self.dreamsData[indexPath.row].date.format(to: "dd.MM.yyyy"))
+        
+        return cell
     }
 }
