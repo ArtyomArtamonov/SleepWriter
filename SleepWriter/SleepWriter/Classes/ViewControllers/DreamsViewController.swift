@@ -43,6 +43,14 @@ class DreamsViewController: UITableViewController {
         return 150
     }
     
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Hello date"
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dreamCell") as! DreamCell
         

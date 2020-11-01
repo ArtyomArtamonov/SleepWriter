@@ -25,6 +25,25 @@ class DreamCell : UITableViewCell {
     
     override func awakeFromNib() -> () {
         super.awakeFromNib()
+        
+        self.isUserInteractionEnabled = true
+        let interaction = UIContextMenuInteraction(delegate: self)
+        self.addInteraction(interaction)
+        
         self.mainView.layer.cornerRadius = 25
     }
 }
+
+extension DreamCell : UIContextMenuInteractionDelegate{
+    func contextMenuInteraction(_ interaction: UIContextMenuInteraction, configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
+            let configuration = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { actions -> UIMenu? in
+                let save = UIAction(title: "Delete", image: nil, identifier: nil) { action in
+                        // Put button handler here
+                        
+                    }
+                return UIMenu(title: "", image: nil, identifier: nil, options: .destructive, children: [save])
+            }
+            return configuration
+        }
+}
+

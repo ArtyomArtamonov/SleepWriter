@@ -62,6 +62,7 @@
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <gestureRecognizers/>
             <connections>
                 <outlet property="dateLabel" destination="y9x-kI-Wui" id="6jE-To-nAV"/>
                 <outlet property="mainView" destination="xYP-bC-pqa" id="Dn9-Iw-eQs"/>
