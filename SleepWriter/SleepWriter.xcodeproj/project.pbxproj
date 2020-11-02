@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9221D4462550670A007318EF /* Dream+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9221D4452550670A007318EF /* Dream+CoreDataClass.swift */; };
 		925FA54725487EF9009574DB /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 925FA53C25487EF9009574DB /* Rubik-MediumItalic.ttf */; };
 		925FA54825487EF9009574DB /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 925FA53D25487EF9009574DB /* Rubik-Bold.ttf */; };
 		925FA54925487EF9009574DB /* SIL Open Font License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 925FA53E25487EF9009574DB /* SIL Open Font License.txt */; };
@@ -21,7 +22,6 @@
 		92680C5D254B1DD60032570C /* DreamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92680C5C254B1DD60032570C /* DreamCell.swift */; };
 		92680C62254B1EDF0032570C /* DreamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92680C61254B1EDF0032570C /* DreamsViewController.swift */; };
 		92680C72254B2C6C0032570C /* SleepWriter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92680C70254B2C6C0032570C /* SleepWriter.xcdatamodeld */; };
-		92680C78254B2D8A0032570C /* Dream+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92680C76254B2D8A0032570C /* Dream+CoreDataClass.swift */; };
 		92680C7C254B2FDA0032570C /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92680C7B254B2FDA0032570C /* CoreDataManager.swift */; };
 		92680C83254B32EC0032570C /* PersistanceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92680C82254B32EC0032570C /* PersistanceLayer.swift */; };
 		92680C86254B34370032570C /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92680C85254B34360032570C /* Date.swift */; };
@@ -39,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9221D4452550670A007318EF /* Dream+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dream+CoreDataClass.swift"; sourceTree = "<group>"; };
 		925FA53C25487EF9009574DB /* Rubik-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-MediumItalic.ttf"; sourceTree = "<group>"; };
 		925FA53D25487EF9009574DB /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
 		925FA53E25487EF9009574DB /* SIL Open Font License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SIL Open Font License.txt"; sourceTree = "<group>"; };
@@ -53,7 +54,6 @@
 		92680C5C254B1DD60032570C /* DreamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamCell.swift; sourceTree = "<group>"; };
 		92680C61254B1EDF0032570C /* DreamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamsViewController.swift; sourceTree = "<group>"; };
 		92680C71254B2C6C0032570C /* SleepWriter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SleepWriter.xcdatamodel; sourceTree = "<group>"; };
-		92680C76254B2D8A0032570C /* Dream+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dream+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		92680C7B254B2FDA0032570C /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		92680C82254B32EC0032570C /* PersistanceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceLayer.swift; sourceTree = "<group>"; };
 		92680C85254B34360032570C /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				92680C7B254B2FDA0032570C /* CoreDataManager.swift */,
-				92680C76254B2D8A0032570C /* Dream+CoreDataClass.swift */,
+				9221D4452550670A007318EF /* Dream+CoreDataClass.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -364,7 +364,7 @@
 				92885C75254A808C008A6510 /* EditDreamViewController.swift in Sources */,
 				BFDF4BB025040209006F020D /* AppDelegate.swift in Sources */,
 				92680C5D254B1DD60032570C /* DreamCell.swift in Sources */,
-				92680C78254B2D8A0032570C /* Dream+CoreDataClass.swift in Sources */,
+				9221D4462550670A007318EF /* Dream+CoreDataClass.swift in Sources */,
 				92680C7C254B2FDA0032570C /* CoreDataManager.swift in Sources */,
 				92885C6E254A6D7F008A6510 /* MainPageController.swift in Sources */,
 				BFDF4BB225040209006F020D /* SceneDelegate.swift in Sources */,
@@ -514,14 +514,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J7XTQZH8VJ;
+				DEVELOPMENT_TEAM = H72YUS24CN;
 				INFOPLIST_FILE = SleepWriter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.art3aofficial.SleepWriter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsatualdypov.SleepWriter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -534,14 +534,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J7XTQZH8VJ;
+				DEVELOPMENT_TEAM = H72YUS24CN;
 				INFOPLIST_FILE = SleepWriter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.art3aofficial.SleepWriter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tsatualdypov.SleepWriter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

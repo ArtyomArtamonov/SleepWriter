@@ -32,9 +32,21 @@ class DreamsViewController: UITableViewController {
         super.viewDidLoad()
         self.initialConfiguration()
     }
+}
 
-    // MARK: - Table view data source
-
+extension DreamsViewController {
+    
+    private func targetedPreview(with configuration: UIContextMenuConfiguration) -> UITargetedPreview? {
+        guard let indexPath = configuration.identifier as? IndexPath,
+              let cell = tableView.cellForRow(at: indexPath) as? DreamCell
+        else { return nil }
+        
+        let parameters = UIPreviewParameters()
+        parameters.backgroundColor = .clear
+        
+        return .init(view: cell.mainView, parameters: parameters)
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dreamsData.count
     }
@@ -58,5 +70,25 @@ class DreamsViewController: UITableViewController {
         cell.display(date: self.dreamsData[indexPath.row].date.format(to: "dd.MM.yyyy"))
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, previewForHighlightingContextMenuWithConfiguration configuration: UIContextMenuConfiguration) -> UITargetedPreview? {
+        return self.targetedPreview(with: configuration)
+    }
+    
+    override func tableView(_ tableView: UITableView, previewForDismissingContextMenuWithConfiguration configuration: UIContextMenuConfiguration) -> UITargetedPreview? {
+        return self.targetedPreview(with: configuration)
+    }
+    
+    override func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        let identifier = indexPath as NSCopying
+        
+        return UIContextMenuConfiguration(identifier: identifier, previewProvider: nil) { (_) -> UIMenu? in
+            let deleteAction = UIAction(title: "Delete", image: UIImage(systemName: "trash"), attributes: .destructive) { _ in
+                // Delete logic or function call here...
+            }
+            
+            return UIMenu(title: "", children: [deleteAction])
+        }
     }
 }
