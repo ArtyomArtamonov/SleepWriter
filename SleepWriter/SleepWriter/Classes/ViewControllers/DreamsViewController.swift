@@ -55,8 +55,15 @@ extension DreamsViewController {
         return 150
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Hello date"
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.backgroundColor = .clear
+        label.text = "September"
+        label.font = UIFont(name: "Rubik-Regular", size: 19)
+        label.textColor = .white
+        label.textAlignment = .center
+        // Section logic
+        return label
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -85,7 +92,7 @@ extension DreamsViewController {
         
         return UIContextMenuConfiguration(identifier: identifier, previewProvider: nil) { (_) -> UIMenu? in
             let deleteAction = UIAction(title: "Delete", image: UIImage(systemName: "trash"), attributes: .destructive) { _ in
-                // Delete logic or function call here...
+                
                 PersistanceLayer.coreData.delete(object: self.dreamsData[indexPath.row])
                 self.dreamsData.remove(at: indexPath.row)
                 self.tableView.reloadData()

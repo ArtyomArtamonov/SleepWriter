@@ -29,6 +29,7 @@
 		92885C75254A808C008A6510 /* EditDreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92885C74254A808B008A6510 /* EditDreamViewController.swift */; };
 		92885C78254B1BAD008A6510 /* DreamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92885C77254B1BAB008A6510 /* DreamCell.xib */; };
 		BF0779802506815C00FF8F05 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF07797F2506815C00FF8F05 /* UIColor.swift */; };
+		BF59D11425531B4C00BC24DB /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF59D11325531B4C00BC24DB /* HeaderView.swift */; };
 		BFDF4BB025040209006F020D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4BAF25040209006F020D /* AppDelegate.swift */; };
 		BFDF4BB225040209006F020D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4BB125040209006F020D /* SceneDelegate.swift */; };
 		BFDF4BB425040209006F020D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4BB325040209006F020D /* MainViewController.swift */; };
@@ -63,6 +64,7 @@
 		A09E44EC43C91C67B93887A4 /* Pods-SleepWriter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SleepWriter.debug.xcconfig"; path = "Target Support Files/Pods-SleepWriter/Pods-SleepWriter.debug.xcconfig"; sourceTree = "<group>"; };
 		A6BE511E56573F92F224028C /* Pods_SleepWriter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SleepWriter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF07797F2506815C00FF8F05 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		BF59D11325531B4C00BC24DB /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		BFDF4BAC25040209006F020D /* SleepWriter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepWriter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFDF4BAF25040209006F020D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFDF4BB125040209006F020D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				92680C5F254B1EC30032570C /* DreamCell */,
+				BF59D11325531B4C00BC24DB /* HeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				92885C6E254A6D7F008A6510 /* MainPageController.swift in Sources */,
 				BFDF4BB225040209006F020D /* SceneDelegate.swift in Sources */,
 				92680C83254B32EC0032570C /* PersistanceLayer.swift in Sources */,
+				BF59D11425531B4C00BC24DB /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
