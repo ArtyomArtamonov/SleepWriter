@@ -86,6 +86,9 @@ extension DreamsViewController {
         return UIContextMenuConfiguration(identifier: identifier, previewProvider: nil) { (_) -> UIMenu? in
             let deleteAction = UIAction(title: "Delete", image: UIImage(systemName: "trash"), attributes: .destructive) { _ in
                 // Delete logic or function call here...
+                PersistanceLayer.coreData.delete(object: self.dreamsData[indexPath.row])
+                self.dreamsData.remove(at: indexPath.row)
+                self.tableView.reloadData()
             }
             
             return UIMenu(title: "", children: [deleteAction])
