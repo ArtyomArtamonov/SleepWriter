@@ -30,6 +30,7 @@
 		92885C78254B1BAD008A6510 /* DreamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92885C77254B1BAB008A6510 /* DreamCell.xib */; };
 		BF0779802506815C00FF8F05 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF07797F2506815C00FF8F05 /* UIColor.swift */; };
 		BF59D11425531B4C00BC24DB /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF59D11325531B4C00BC24DB /* HeaderView.swift */; };
+		BF742DB925543F670050ADAE /* DreamDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF742DB825543F670050ADAE /* DreamDetailsViewController.swift */; };
 		BFDF4BB025040209006F020D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4BAF25040209006F020D /* AppDelegate.swift */; };
 		BFDF4BB225040209006F020D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4BB125040209006F020D /* SceneDelegate.swift */; };
 		BFDF4BB425040209006F020D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4BB325040209006F020D /* MainViewController.swift */; };
@@ -65,6 +66,7 @@
 		A6BE511E56573F92F224028C /* Pods_SleepWriter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SleepWriter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF07797F2506815C00FF8F05 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		BF59D11325531B4C00BC24DB /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		BF742DB825543F670050ADAE /* DreamDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamDetailsViewController.swift; sourceTree = "<group>"; };
 		BFDF4BAC25040209006F020D /* SleepWriter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepWriter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFDF4BAF25040209006F020D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFDF4BB125040209006F020D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				92885C6D254A6D7E008A6510 /* MainPageController.swift */,
 				92885C74254A808B008A6510 /* EditDreamViewController.swift */,
 				92680C61254B1EDF0032570C /* DreamsViewController.swift */,
+				BF742DB825543F670050ADAE /* DreamDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 			files = (
 				92680C62254B1EDF0032570C /* DreamsViewController.swift in Sources */,
 				92680C86254B34370032570C /* Date.swift in Sources */,
+				BF742DB925543F670050ADAE /* DreamDetailsViewController.swift in Sources */,
 				BFDF4BB425040209006F020D /* MainViewController.swift in Sources */,
 				92680C72254B2C6C0032570C /* SleepWriter.xcdatamodeld in Sources */,
 				BF0779802506815C00FF8F05 /* UIColor.swift in Sources */,

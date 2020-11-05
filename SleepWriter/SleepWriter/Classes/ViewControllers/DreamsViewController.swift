@@ -11,6 +11,7 @@ import UIKit
 class DreamsViewController: UITableViewController {
     
     private var dreamsData : [Dream] = .init()
+    public weak var delegate : MainViewControllerDelegate?
     
     private func fetchData() -> () {
         self.dreamsData = PersistanceLayer.coreData.fetch(type: Dream.self, dateOrderAscending: false)
@@ -34,11 +35,11 @@ class DreamsViewController: UITableViewController {
     }
 }
 
-extension DreamsViewController {
+extension DreamsViewController{
     
     private func targetedPreview(with configuration: UIContextMenuConfiguration) -> UITargetedPreview? {
         guard let indexPath = configuration.identifier as? IndexPath,
-              let cell = tableView.cellForRow(at: indexPath) as? DreamCell
+              let cell = self.tableView.cellForRow(at: indexPath) as? DreamCell
         else { return nil }
         
         let parameters = UIPreviewParameters()
@@ -49,6 +50,11 @@ extension DreamsViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dreamsData.count
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //#error("Delegate is nil")
+        self.delegate?.showDetails(of: dreamsData[indexPath.row])
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
