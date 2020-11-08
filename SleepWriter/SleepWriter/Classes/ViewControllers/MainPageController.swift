@@ -20,7 +20,7 @@ class MainPageController : UIPageViewController {
     
     private var dreamsVC : DreamsViewController?
     
-    private func configurePages() -> () {
+    public func configurePages() -> () {
         self.delegate = self
         self.dataSource = self
         
@@ -32,16 +32,12 @@ class MainPageController : UIPageViewController {
         
         self.dreamsVC = dreamsVC
         editVC.delegate = self
+        self.dreamsVC!.delegate = rootDelegate
         
         self.pages.append(editVC)
         self.pages.append(dreamsVC)
         
         self.setViewControllers([editVC], direction: .forward, animated: false, completion: nil)
-    }
-    
-    public func configurePagesAfterRoot(){
-        print(self.dreamsVC)
-        self.dreamsVC?.delegate = rootDelegate
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -8,13 +8,81 @@
 
 import UIKit
 
+class DreamSorter{
+    
+    public var dreamsData : [Dream] = [] {
+        didSet{
+            sortBySections()
+            #warning("Sort dreams by dates")
+        }
+    }
+    
+    private var dreamsBySections = [String : [Dream]]()
+    
+    public func getDreamsBySections() -> [String : [Dream]]{
+        return dreamsBySections
+    }
+    
+    init(dreams : [Dream]){
+        dreamsData = dreams
+        sortBySections()
+    }
+    
+    private func sortBySections(){
+        for dream in dreamsData{
+            if !dreamsBySections.keys.contains(getSection(for: dream)){
+                dreamsBySections.updateValue([], forKey: getSection(for: dream))
+            }
+            if !dreamsBySections[getSection(for: dream)]!.contains(dream){
+                dreamsBySections[getSection(for: dream)]!.append(dream)
+            }
+        }
+    }
+    
+    private func getSection(for dream : Dream) -> String{
+        if getYear(from: dream.date) == getYear(from: Date()) {
+            return getMonth(from: dream.date)
+        }else{
+            return getMonth(from: dream.date) + " " + getYear(from: dream.date)
+        }
+    }
+    
+    private func getMonth(from date : Date) -> String{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "LLLL"
+        return formatter.string(from: date)
+    }
+    
+    private func getYear(from date : Date) -> String{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "YYYY"
+        return formatter.string(from: date)
+    }
+}
+
 class DreamsViewController: UITableViewController {
     
-    private var dreamsData : [Dream] = .init()
+    private var dreamsData : [Dream] = .init(){
+        didSet{
+            sortData()
+        }
+    }
+    private var dreamSorter : DreamSorter!
+    private var dreamsBySections : [String : [Dream]]!
     public weak var delegate : MainViewControllerDelegate?
     
     private func fetchData() -> () {
-        self.dreamsData = PersistanceLayer.coreData.fetch(type: Dream.self, dateOrderAscending: false)
+        dreamsData = PersistanceLayer.coreData.fetch(type: Dream.self, dateOrderAscending: true)
+    }
+    
+    private func sortData() -> () {
+        if let _ = self.dreamSorter{
+            
+        }else{
+            dreamSorter = DreamSorter(dreams: dreamsData)
+        }
+        dreamSorter.dreamsData = dreamsData
+        dreamsBySections = dreamSorter.getDreamsBySections()
     }
     
     private func initialConfiguration() -> () {
@@ -23,8 +91,6 @@ class DreamsViewController: UITableViewController {
     }
     
     public func add(dream : Dream) -> () {
-        #warning("TODO: Add more logic here.")
-        
         self.dreamsData.insert(dream, at: 0)
         self.tableView.reloadData()
     }
@@ -48,23 +114,10 @@ extension DreamsViewController{
         return .init(view: cell.mainView, parameters: parameters)
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.dreamsData.count
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //#error("Delegate is nil")
-        self.delegate?.showDetails(of: dreamsData[indexPath.row])
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
-    }
-    
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    private func getSectionLabel(for month : String) -> UILabel{
         let label = UILabel()
         label.backgroundColor = .clear
-        label.text = "September"
+        label.text = month
         label.font = UIFont(name: "Rubik-Regular", size: 19)
         label.textColor = .white
         label.textAlignment = .center
@@ -72,15 +125,43 @@ extension DreamsViewController{
         return label
     }
     
+    private func getDream(by indexPath : IndexPath) -> Dream{
+        let i = dreamsBySections.index(dreamsBySections.startIndex, offsetBy: indexPath.section)
+        return self.dreamsBySections[dreamsBySections.keys[i]]![indexPath.row]
+    }
+    
+    private func getDreamsCount(withOffset offset : Int) -> Int{
+        let i = dreamsBySections.index(dreamsBySections.startIndex, offsetBy: offset)
+        return dreamsBySections[dreamsBySections.keys[i]]!.count
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return getDreamsCount(withOffset: section)
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //#error("Delegate is nil")
+        self.delegate?.showDetails(of: getDream(by: indexPath))
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let i = dreamsBySections.index(dreamsBySections.startIndex, offsetBy: section)
+        return getSectionLabel(for: dreamsBySections.keys[i])
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return dreamsBySections.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dreamCell") as! DreamCell
         
-        cell.display(title: self.dreamsData[indexPath.row].title)
-        cell.display(date: self.dreamsData[indexPath.row].date.format(to: "dd.MM.yyyy"))
+        cell.display(title: getDream(by: indexPath).title)
+        cell.display(date: getDream(by: indexPath).date.format(to: "dd.MM.yyyy"))
         
         return cell
     }

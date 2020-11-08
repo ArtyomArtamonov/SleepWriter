@@ -10,15 +10,23 @@ import UIKit
 
 class DreamDetailsViewController: UIViewController {
 
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var textLabel: UILabel!
+    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var contentView: UIView!
+    
+    private var dream : Dream!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        titleLabel.text = dream.title
+        textLabel.text = dream.text
+        
     }
     
-    public func set(dream : Dream){
-        // Setting dream details
-        #warning("TODO: Setting dream description")
+    public func set(_ dream : Dream){
+        self.dream = dream
     }
     
     

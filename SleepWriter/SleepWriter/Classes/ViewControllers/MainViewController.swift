@@ -18,10 +18,11 @@ class MainViewController: UIViewController {
     @IBOutlet private weak var pageControl: UIPageControl!
     
     @IBSegueAction private func embedSegue(_ coder: NSCoder) -> MainPageController? {
-        #error("Segue not connected")
+        print("Instance")
         let pageController = MainPageController(coder: coder)
         pageController?.rootDelegate = self
-        pageController?.configurePagesAfterRoot()
+        pageController?.configurePages()
+        #warning("TODO: Think about adding initializer with configurePages() call in it")
         return pageController
     }
     
@@ -38,11 +39,10 @@ class MainViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "dreamDerails" {
+        if segue.identifier == "dreamDetails" {
              guard let VC = segue.destination as? DreamDetailsViewController else { return }
             guard let dream = self.dreamToShowDetailsOf else { return }
-            print("Success")
-            VC.set(dream: dream)
+            VC.set(dream)
         }
     }
     
@@ -55,8 +55,10 @@ class MainViewController: UIViewController {
 extension MainViewController : MainViewControllerDelegate {
     
     func showDetails(of dream: Dream) {
+        print("Show details start")
         self.dreamToShowDetailsOf = dream
         performSegue(withIdentifier: "dreamDetails", sender: self)
+        print("Show details end")
     }
     
     internal func setPage(index: Int) -> () {
