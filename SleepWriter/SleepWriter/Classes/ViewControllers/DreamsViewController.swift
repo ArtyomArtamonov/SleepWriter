@@ -12,23 +12,41 @@ class DreamSorter{
     
     public var dreamsData : [Dream] = [] {
         didSet{
-            sortBySections()
+            sort()
             #warning("Sort dreams by dates")
         }
     }
     
-    private var dreamsBySections = [String : [Dream]]()
+    private var dreamsSorted = [[Dream]]()
     
-    public func getDreamsBySections() -> [String : [Dream]]{
-        return dreamsBySections
+    public func getDreamsBySections() -> [[Dream]]{
+        return dreamsSorted
+    }
+    
+    public func add(dream : Dream) -> () {
+        dreamsData.append(dream)
+    }
+    
+    public func remove(dream : Dream) -> () {
+        dreamsData.remove(at: dreamsData.firstIndex(of: dream)!)
+    }
+    
+    public func remove(at indexPath: IndexPath) -> () {
+        dreamsSorted[indexPath.section].remove(at: indexPath.row)
+        if dreamsSorted[indexPath.section].isEmpty{
+            dreamsSorted.remove(at: indexPath.section)
+        }
     }
     
     init(dreams : [Dream]){
         dreamsData = dreams
-        sortBySections()
+        sort()
     }
     
-    private func sortBySections(){
+    private func sort(){
+        var dreamsBySections = [String : [Dream]]()
+        dreamsSorted = [[Dream]]()
+        
         for dream in dreamsData{
             if !dreamsBySections.keys.contains(getSection(for: dream)){
                 dreamsBySections.updateValue([], forKey: getSection(for: dream))
@@ -36,6 +54,13 @@ class DreamSorter{
             if !dreamsBySections[getSection(for: dream)]!.contains(dream){
                 dreamsBySections[getSection(for: dream)]!.append(dream)
             }
+        }
+        
+        for dreams in dreamsBySections.values{
+            self.dreamsSorted.append(dreams.sorted(by: {$0.date > $1.date}))
+        }
+        dreamsSorted.sort { dreams1, dreams2 in
+            return dreams1[0].date > dreams2[0].date
         }
     }
     
@@ -68,11 +93,15 @@ class DreamsViewController: UITableViewController {
         }
     }
     private var dreamSorter : DreamSorter!
-    private var dreamsBySections : [String : [Dream]]!
+    private var dreamsBySections : [[Dream]]!
     public weak var delegate : MainViewControllerDelegate?
     
     private func fetchData() -> () {
         dreamsData = PersistanceLayer.coreData.fetch(type: Dream.self, dateOrderAscending: true)
+    }
+    
+    private func updateDreamsArray(){
+        dreamsBySections = dreamSorter.getDreamsBySections()
     }
     
     private func sortData() -> () {
@@ -82,7 +111,7 @@ class DreamsViewController: UITableViewController {
             dreamSorter = DreamSorter(dreams: dreamsData)
         }
         dreamSorter.dreamsData = dreamsData
-        dreamsBySections = dreamSorter.getDreamsBySections()
+        self.updateDreamsArray()
     }
     
     private func initialConfiguration() -> () {
@@ -91,7 +120,8 @@ class DreamsViewController: UITableViewController {
     }
     
     public func add(dream : Dream) -> () {
-        self.dreamsData.insert(dream, at: 0)
+        self.dreamSorter.add(dream: dream)
+        self.updateDreamsArray()
         self.tableView.reloadData()
     }
     
@@ -114,7 +144,18 @@ extension DreamsViewController{
         return .init(view: cell.mainView, parameters: parameters)
     }
     
-    private func getSectionLabel(for month : String) -> UILabel{
+    private func getSectionLabel(forDreams dreams : [Dream]) -> UILabel{
+        let formatterM = DateFormatter()
+        let formatterY = DateFormatter()
+        formatterY.dateFormat = "YYYY"
+        if formatterY.string(from: dreams[0].date) != formatterY.string(from: Date()){
+            formatterM.dateFormat = "LLLL YYYY"
+        }else{
+            formatterM.dateFormat = "LLLL"
+        }
+        
+        let month : String = formatterM.string(from: dreams[0].date)
+        
         let label = UILabel()
         label.backgroundColor = .clear
         label.text = month
@@ -126,13 +167,11 @@ extension DreamsViewController{
     }
     
     private func getDream(by indexPath : IndexPath) -> Dream{
-        let i = dreamsBySections.index(dreamsBySections.startIndex, offsetBy: indexPath.section)
-        return self.dreamsBySections[dreamsBySections.keys[i]]![indexPath.row]
+        return self.dreamsBySections[indexPath.section][indexPath.row]
     }
     
     private func getDreamsCount(withOffset offset : Int) -> Int{
-        let i = dreamsBySections.index(dreamsBySections.startIndex, offsetBy: offset)
-        return dreamsBySections[dreamsBySections.keys[i]]!.count
+        return dreamsBySections[offset].count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -149,8 +188,7 @@ extension DreamsViewController{
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let i = dreamsBySections.index(dreamsBySections.startIndex, offsetBy: section)
-        return getSectionLabel(for: dreamsBySections.keys[i])
+        return getSectionLabel(forDreams: dreamsBySections[section])
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -180,8 +218,9 @@ extension DreamsViewController{
         return UIContextMenuConfiguration(identifier: identifier, previewProvider: nil) { (_) -> UIMenu? in
             let deleteAction = UIAction(title: "Delete", image: UIImage(systemName: "trash"), attributes: .destructive) { _ in
                 
-                PersistanceLayer.coreData.delete(object: self.dreamsData[indexPath.row])
-                self.dreamsData.remove(at: indexPath.row)
+                PersistanceLayer.coreData.delete(object: self.dreamsBySections[indexPath.section][indexPath.row])
+                self.dreamSorter.remove(at : indexPath)
+                self.updateDreamsArray()
                 self.tableView.reloadData()
             }
             

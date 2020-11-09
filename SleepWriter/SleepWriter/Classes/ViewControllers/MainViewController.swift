@@ -18,7 +18,6 @@ class MainViewController: UIViewController {
     @IBOutlet private weak var pageControl: UIPageControl!
     
     @IBSegueAction private func embedSegue(_ coder: NSCoder) -> MainPageController? {
-        print("Instance")
         let pageController = MainPageController(coder: coder)
         pageController?.rootDelegate = self
         pageController?.configurePages()

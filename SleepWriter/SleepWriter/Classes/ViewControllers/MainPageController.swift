@@ -42,7 +42,7 @@ class MainPageController : UIPageViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.configurePages()
+//        self.configurePages()
     }
 }
 
