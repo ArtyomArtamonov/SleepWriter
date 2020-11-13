@@ -126,6 +126,7 @@ class DreamsViewController: UITableViewController {
     }
     
     public func add(dream : Dream) -> () {
+        initiateSorter()
         self.dreamSorter.add(dream: dream)
         self.updateDreamsArray()
         self.tableView.reloadData()

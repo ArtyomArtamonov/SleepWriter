@@ -9,7 +9,7 @@
 import UIKit
 import STTextView
 
-class EditDreamViewController: UIViewController {
+class EditDreamViewController: UIViewController{
 
     @IBOutlet private weak var titleTextField: UITextField!
     @IBOutlet private weak var dreamTextView: STTextView!
@@ -116,5 +116,11 @@ class EditDreamViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) -> () {
         super.viewWillAppear(animated)
         self.initialConfiguration()
+    }
+}
+
+extension EditDreamViewController : UITextFieldDelegate{
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return textField.text!.count < 20 || string == ""
     }
 }
