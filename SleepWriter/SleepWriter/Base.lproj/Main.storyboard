@@ -254,7 +254,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2ba-9R-tjX"/>
-                        <color key="backgroundColor" red="0.094117647058823528" green="0.40784313725490196" blue="0.43529411764705883" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.0" green="0.20000000000000001" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="2ba-9R-tjX" firstAttribute="bottom" secondItem="8u2-th-yms" secondAttribute="bottom" id="6cM-VB-iJa"/>
                             <constraint firstItem="8u2-th-yms" firstAttribute="leading" secondItem="2ba-9R-tjX" secondAttribute="leading" id="7BO-pb-TSt"/>
@@ -266,6 +266,7 @@
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="contentView" destination="Rqc-ZZ-0bl" id="2uY-Q5-1pK"/>
+                        <outlet property="dateLabel" destination="nVg-4V-5FT" id="eda-bH-iLk"/>
                         <outlet property="scrollView" destination="8u2-th-yms" id="qTE-E1-fpT"/>
                         <outlet property="textLabel" destination="AH5-9R-hBk" id="PYx-ZQ-FEO"/>
                         <outlet property="titleLabel" destination="IGZ-OQ-7Fj" id="39I-LY-ebu"/>

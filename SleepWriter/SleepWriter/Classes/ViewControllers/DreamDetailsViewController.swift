@@ -14,15 +14,22 @@ class DreamDetailsViewController: UIViewController {
     @IBOutlet var textLabel: UILabel!
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var contentView: UIView!
+    @IBOutlet var dateLabel: UILabel!
     
     private var dream : Dream!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         titleLabel.text = dream.title
         textLabel.text = dream.text
         
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        
+        dateLabel.text = formatter.string(from: dream.date)
     }
     
     public func set(_ dream : Dream){

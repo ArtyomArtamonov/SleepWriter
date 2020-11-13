@@ -13,7 +13,6 @@ class DreamSorter{
     public var dreamsData : [Dream] = [] {
         didSet{
             sort()
-            #warning("Sort dreams by dates")
         }
     }
     
@@ -29,13 +28,16 @@ class DreamSorter{
     
     public func remove(dream : Dream) -> () {
         dreamsData.remove(at: dreamsData.firstIndex(of: dream)!)
+        self.sort()
     }
     
     public func remove(at indexPath: IndexPath) -> () {
-        dreamsSorted[indexPath.section].remove(at: indexPath.row)
+        let el = dreamsSorted[indexPath.section].remove(at: indexPath.row)
+        dreamsData.remove(at: dreamsData.firstIndex(of: el)!)
         if dreamsSorted[indexPath.section].isEmpty{
             dreamsSorted.remove(at: indexPath.section)
         }
+        self.sort()
     }
     
     init(dreams : [Dream]){
@@ -46,7 +48,7 @@ class DreamSorter{
     private func sort(){
         var dreamsBySections = [String : [Dream]]()
         dreamsSorted = [[Dream]]()
-        
+        print("sort")
         for dream in dreamsData{
             if !dreamsBySections.keys.contains(getSection(for: dream)){
                 dreamsBySections.updateValue([], forKey: getSection(for: dream))
@@ -105,17 +107,21 @@ class DreamsViewController: UITableViewController {
     }
     
     private func sortData() -> () {
+        dreamSorter.dreamsData = dreamsData
+        self.updateDreamsArray()
+    }
+    
+    private func initiateSorter(){
         if let _ = self.dreamSorter{
             
         }else{
             dreamSorter = DreamSorter(dreams: dreamsData)
         }
-        dreamSorter.dreamsData = dreamsData
-        self.updateDreamsArray()
     }
     
     private func initialConfiguration() -> () {
         self.fetchData()
+        
         self.tableView.register(UINib(nibName: "DreamCell", bundle: nil), forCellReuseIdentifier: "dreamCell")
     }
     
@@ -127,6 +133,7 @@ class DreamsViewController: UITableViewController {
     
     override func viewDidLoad() -> () {
         super.viewDidLoad()
+        self.initiateSorter()
         self.initialConfiguration()
     }
 }
