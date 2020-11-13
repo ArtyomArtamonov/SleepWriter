@@ -21,12 +21,17 @@ class EditDreamViewController: UIViewController {
     
     public weak var delegate : MainPageControllerDelegate?
     
+    @IBAction func helpButtonPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "showHelp", sender: self)
+    }
+    
     @IBAction private func saveButtonPressed(_ sender : UIButton) -> () {
-        #warning("TODO: Create alert that shows message to fill all fields.")
         
-        guard !self.titleTextField.text!.isEmpty,
-              !self.dreamTextView.text.isEmpty
-        else { return }
+        if self.titleTextField.text!.isEmpty || self.dreamTextView.text.isEmpty{
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.warning)
+            return
+        }
         
         let newDream = Dream(title: self.titleTextField.text!,
                              text: self.dreamTextView.text,

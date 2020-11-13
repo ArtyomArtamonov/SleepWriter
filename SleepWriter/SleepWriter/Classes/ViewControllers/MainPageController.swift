@@ -48,8 +48,6 @@ class MainPageController : UIPageViewController {
 
 extension MainPageController : MainPageControllerDelegate {
     internal func add(dream: Dream) -> () {
-        #warning("TODO: Make more smart and generic determination.")
-        
         guard let dreamsViewController = self.pages.last as? DreamsViewController else { return }
         dreamsViewController.add(dream: dream)
     }
