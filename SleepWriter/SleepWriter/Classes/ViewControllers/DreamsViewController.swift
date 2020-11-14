@@ -34,8 +34,10 @@ class DreamSorter{
     public func remove(at indexPath: IndexPath) -> () {
         let el = dreamsSorted[indexPath.section].remove(at: indexPath.row)
         dreamsData.remove(at: dreamsData.firstIndex(of: el)!)
-        if dreamsSorted[indexPath.section].isEmpty{
-            dreamsSorted.remove(at: indexPath.section)
+        if dreamsSorted.count > indexPath.section{
+            if dreamsSorted[indexPath.section].isEmpty{
+                dreamsSorted.remove(at: indexPath.section)
+            }
         }
         self.sort()
     }
