@@ -50,7 +50,7 @@ class DreamSorter{
     private func sort(){
         var dreamsBySections = [String : [Dream]]()
         dreamsSorted = [[Dream]]()
-        print("sort")
+        
         for dream in dreamsData{
             if !dreamsBySections.keys.contains(getSection(for: dream)){
                 dreamsBySections.updateValue([], forKey: getSection(for: dream))

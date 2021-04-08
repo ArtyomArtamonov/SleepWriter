@@ -10,6 +10,7 @@ import UIKit
 
 protocol MainPageControllerDelegate : class {
     func add(dream : Dream) -> ()
+    func switchPage(to pageIndex: Int) -> ()
 }
 
 class MainPageController : UIPageViewController {
@@ -47,6 +48,10 @@ class MainPageController : UIPageViewController {
 }
 
 extension MainPageController : MainPageControllerDelegate {
+    internal func switchPage(to pageIndex: Int) {
+        self.rootDelegate?.setPage(index: pageIndex)
+    }
+    
     internal func add(dream: Dream) -> () {
         guard let dreamsViewController = self.pages.last as? DreamsViewController else { return }
         dreamsViewController.add(dream: dream)

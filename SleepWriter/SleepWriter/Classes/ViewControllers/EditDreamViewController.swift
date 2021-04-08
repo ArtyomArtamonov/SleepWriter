@@ -26,10 +26,22 @@ class EditDreamViewController: UIViewController{
     }
     
     @IBAction private func saveButtonPressed(_ sender : UIButton) -> () {
+        let generator = UINotificationFeedbackGenerator()
         
-        if self.titleTextField.text!.isEmpty || self.dreamTextView.text.isEmpty{
-            let generator = UINotificationFeedbackGenerator()
+        let titleText = self.titleTextField.text!.filter({c in c != Character(" ")})
+        let dreamText = self.dreamTextView.text!.filter({c in c != Character(" ")})
+        
+        if titleText.isEmpty || dreamText.isEmpty{
             generator.notificationOccurred(.warning)
+            
+            if self.titleTextField.text!.isEmpty{
+                shake(titleTextField)
+            }
+            
+            if self.dreamTextView.text.isEmpty{
+                shake(dreamTextView)
+            }
+            
             return
         }
         
@@ -42,6 +54,9 @@ class EditDreamViewController: UIViewController{
         
         self.delegate?.add(dream: newDream)
         PersistanceLayer.coreData.save()
+        
+        generator.notificationOccurred(.success)
+        delegate?.switchPage(to: 1)
     }
     
     @objc private func keyboardWillShow(notification: NSNotification) -> () {
@@ -94,6 +109,17 @@ class EditDreamViewController: UIViewController{
     
     @objc private func forceEndEditing() -> () {
         self.view.endEditing(true)
+    }
+    
+    private func shake(_ view : UIView) -> () {
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.08
+        animation.repeatCount = 1
+        animation.autoreverses = true
+        animation.fromValue = NSValue(cgPoint: CGPoint(x: view.center.x - 5, y: view.center.y))
+        animation.toValue = NSValue(cgPoint: CGPoint(x: view.center.x + 5, y: view.center.y))
+
+        view.layer.add(animation, forKey: "position")
     }
     
     private func addTapGesture() -> () {
