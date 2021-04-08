@@ -32,7 +32,7 @@ class MainViewController: UIViewController {
         
         gradientLayer.frame = self.view.bounds
         gradientLayer.colors = [UIColor(hex: "#19AFBEFF")!.cgColor,
-                                UIColor(hex: "#000000FF")!.cgColor]
+                                UIColor(hex: "#070707FF")!.cgColor]
         
         self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
