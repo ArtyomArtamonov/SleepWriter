@@ -31,6 +31,8 @@
 		BF0779802506815C00FF8F05 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF07797F2506815C00FF8F05 /* UIColor.swift */; };
 		BF59D11425531B4C00BC24DB /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF59D11325531B4C00BC24DB /* HeaderView.swift */; };
 		BF742DB925543F670050ADAE /* DreamDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF742DB825543F670050ADAE /* DreamDetailsViewController.swift */; };
+		BFCE55F42710A19400CA2FA7 /* SleepWriterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCE55F32710A19400CA2FA7 /* SleepWriterUITests.swift */; };
+		BFCE55F62710A19400CA2FA7 /* SleepWriterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCE55F52710A19400CA2FA7 /* SleepWriterUITestsLaunchTests.swift */; };
 		BFDF4BB025040209006F020D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4BAF25040209006F020D /* AppDelegate.swift */; };
 		BFDF4BB225040209006F020D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4BB125040209006F020D /* SceneDelegate.swift */; };
 		BFDF4BB425040209006F020D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4BB325040209006F020D /* MainViewController.swift */; };
@@ -39,6 +41,16 @@
 		BFDF4BBC2504020A006F020D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFDF4BBA2504020A006F020D /* LaunchScreen.storyboard */; };
 		FF2E24F86B4AD12E758A7BED /* Pods_SleepWriter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6BE511E56573F92F224028C /* Pods_SleepWriter.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BFCE55F72710A19400CA2FA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDF4BA425040209006F020D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BFDF4BAB25040209006F020D;
+			remoteInfo = SleepWriter;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		9221D4452550670A007318EF /* Dream+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dream+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -67,6 +79,9 @@
 		BF07797F2506815C00FF8F05 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		BF59D11325531B4C00BC24DB /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		BF742DB825543F670050ADAE /* DreamDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamDetailsViewController.swift; sourceTree = "<group>"; };
+		BFCE55F12710A19400CA2FA7 /* SleepWriterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SleepWriterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFCE55F32710A19400CA2FA7 /* SleepWriterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepWriterUITests.swift; sourceTree = "<group>"; };
+		BFCE55F52710A19400CA2FA7 /* SleepWriterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepWriterUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BFDF4BAC25040209006F020D /* SleepWriter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepWriter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFDF4BAF25040209006F020D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFDF4BB125040209006F020D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +94,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BFCE55EE2710A19400CA2FA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BFDF4BA925040209006F020D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -200,10 +222,20 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		BFCE55F22710A19400CA2FA7 /* SleepWriterUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BFCE55F32710A19400CA2FA7 /* SleepWriterUITests.swift */,
+				BFCE55F52710A19400CA2FA7 /* SleepWriterUITestsLaunchTests.swift */,
+			);
+			path = SleepWriterUITests;
+			sourceTree = "<group>";
+		};
 		BFDF4BA325040209006F020D = {
 			isa = PBXGroup;
 			children = (
 				BFDF4BAE25040209006F020D /* SleepWriter */,
+				BFCE55F22710A19400CA2FA7 /* SleepWriterUITests */,
 				BFDF4BAD25040209006F020D /* Products */,
 				96C3BAA03C7E426C5A38AB19 /* Pods */,
 				39E430D5EC10262A938DD798 /* Frameworks */,
@@ -214,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				BFDF4BAC25040209006F020D /* SleepWriter.app */,
+				BFCE55F12710A19400CA2FA7 /* SleepWriterUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -238,6 +271,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		BFCE55F02710A19400CA2FA7 /* SleepWriterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFCE55F92710A19400CA2FA7 /* Build configuration list for PBXNativeTarget "SleepWriterUITests" */;
+			buildPhases = (
+				BFCE55ED2710A19400CA2FA7 /* Sources */,
+				BFCE55EE2710A19400CA2FA7 /* Frameworks */,
+				BFCE55EF2710A19400CA2FA7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BFCE55F82710A19400CA2FA7 /* PBXTargetDependency */,
+			);
+			name = SleepWriterUITests;
+			productName = SleepWriterUITests;
+			productReference = BFCE55F12710A19400CA2FA7 /* SleepWriterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		BFDF4BAB25040209006F020D /* SleepWriter */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BFDF4BC02504020A006F020D /* Build configuration list for PBXNativeTarget "SleepWriter" */;
@@ -263,10 +314,14 @@
 		BFDF4BA425040209006F020D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1170;
+				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1170;
 				ORGANIZATIONNAME = "Artyom Artamonov";
 				TargetAttributes = {
+					BFCE55F02710A19400CA2FA7 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = BFDF4BAB25040209006F020D;
+					};
 					BFDF4BAB25040209006F020D = {
 						CreatedOnToolsVersion = 11.7;
 					};
@@ -286,11 +341,19 @@
 			projectRoot = "";
 			targets = (
 				BFDF4BAB25040209006F020D /* SleepWriter */,
+				BFCE55F02710A19400CA2FA7 /* SleepWriterUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BFCE55EF2710A19400CA2FA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BFDF4BAA25040209006F020D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -358,6 +421,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BFCE55ED2710A19400CA2FA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFCE55F42710A19400CA2FA7 /* SleepWriterUITests.swift in Sources */,
+				BFCE55F62710A19400CA2FA7 /* SleepWriterUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BFDF4BA825040209006F020D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -382,6 +454,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		BFCE55F82710A19400CA2FA7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BFDF4BAB25040209006F020D /* SleepWriter */;
+			targetProxy = BFCE55F72710A19400CA2FA7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		BFDF4BB525040209006F020D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -402,6 +482,56 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		BFCE55FA2710A19400CA2FA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J7XTQZH8VJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wex1er.SleepWriterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SleepWriter;
+			};
+			name = Debug;
+		};
+		BFCE55FB2710A19400CA2FA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J7XTQZH8VJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wex1er.SleepWriterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SleepWriter;
+			};
+			name = Release;
+		};
 		BFDF4BBE2504020A006F020D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -523,14 +653,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = 4P3C572SU5;
+				DEVELOPMENT_TEAM = J7XTQZH8VJ;
 				INFOPLIST_FILE = SleepWriter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.art3aofficial.SleepWriter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wex1er.SleepWriter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -544,14 +674,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_TEAM = 4P3C572SU5;
+				DEVELOPMENT_TEAM = J7XTQZH8VJ;
 				INFOPLIST_FILE = SleepWriter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.art3aofficial.SleepWriter;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wex1er.SleepWriter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -561,6 +691,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BFCE55F92710A19400CA2FA7 /* Build configuration list for PBXNativeTarget "SleepWriterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFCE55FA2710A19400CA2FA7 /* Debug */,
+				BFCE55FB2710A19400CA2FA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BFDF4BA725040209006F020D /* Build configuration list for PBXProject "SleepWriter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
