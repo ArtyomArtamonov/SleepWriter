@@ -96,6 +96,19 @@ class DreamsViewController: UITableViewController {
             sortData()
         }
     }
+    
+    //Can change Text here:
+    private var emptyLbl: UILabel = {
+       let lbl = UILabel()
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.text = "Create a dream"
+        lbl.textColor = .white
+        lbl.font = UIFont(name: "Rubik-Regular", size: 20.0)
+        lbl.textAlignment = .center
+        return lbl
+    }()
+    
+    
     private var dreamSorter : DreamSorter!
     private var dreamsBySections : [[Dream]]!
     public weak var delegate : MainViewControllerDelegate?
@@ -134,8 +147,14 @@ class DreamsViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-    override func viewDidLoad() -> () {
-        super.viewDidLoad()
+    override func loadView() -> () {
+        super.loadView()
+        
+        self.view.addSubview(emptyLbl)
+        NSLayoutConstraint.activate([
+            emptyLbl.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            emptyLbl.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
+        ])
         self.initiateSorter()
         self.initialConfiguration()
     }
@@ -185,6 +204,16 @@ extension DreamsViewController{
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if getDreamsCount(withOffset: section) > 0 {
+            DispatchQueue.main.async {
+                self.emptyLbl.isHidden = true
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.emptyLbl.isHidden = false
+            }
+        }
+        
         return getDreamsCount(withOffset: section)
     }
     
@@ -231,6 +260,11 @@ extension DreamsViewController{
                 PersistanceLayer.coreData.delete(object: self.dreamsBySections[indexPath.section][indexPath.row])
                 self.dreamSorter.remove(at : indexPath)
                 self.updateDreamsArray()
+                DispatchQueue.main.async {
+                    if PersistanceLayer.coreData.fetch(type: Dream.self).count == 0 {
+                        self.emptyLbl.isHidden = false
+                    }
+                }
                 self.tableView.reloadData()
             }
             
