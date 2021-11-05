@@ -27,6 +27,8 @@ class EmptyView: UIView {
         super.layoutSubviews()
         setUpView()
     }
+    
+    //Can change font and text for emptyLbl here
     private func setUpView() {
         backgroundColor = UIColor.applicationDarkColor
         emptyLbl.text = "Create a dream"

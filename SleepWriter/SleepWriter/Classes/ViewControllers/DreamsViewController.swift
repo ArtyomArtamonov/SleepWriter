@@ -97,15 +97,13 @@ class DreamsViewController: UITableViewController {
         }
     }
     
-    //Can change Text here:
-    private var emptyLbl: UILabel = {
-       let lbl = UILabel()
-        lbl.translatesAutoresizingMaskIntoConstraints = false
-        lbl.text = "Create a dream"
-        lbl.textColor = .white
-        lbl.font = UIFont(name: "Rubik-Regular", size: 20.0)
-        lbl.textAlignment = .center
-        return lbl
+    
+    
+    private var emptyView: EmptyView = {
+       let view = EmptyView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return view
     }()
     
     
@@ -149,15 +147,20 @@ class DreamsViewController: UITableViewController {
     
     override func loadView() -> () {
         super.loadView()
+        self.view.addSubview(emptyView)
+        self.emptyView.translatesAutoresizingMaskIntoConstraints = false
         
-        self.view.addSubview(emptyLbl)
         NSLayoutConstraint.activate([
-            emptyLbl.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            emptyLbl.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
+            emptyView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            emptyView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            emptyView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2),
+            emptyView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8)
         ])
         self.initiateSorter()
         self.initialConfiguration()
     }
+    
+    
 }
 
 extension DreamsViewController{
@@ -206,11 +209,11 @@ extension DreamsViewController{
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if getDreamsCount(withOffset: section) > 0 {
             DispatchQueue.main.async {
-                self.emptyLbl.isHidden = true
+                self.emptyView.isHidden = true
             }
         } else {
             DispatchQueue.main.async {
-                self.emptyLbl.isHidden = false
+                self.emptyView.isHidden = false
             }
         }
         
@@ -262,7 +265,7 @@ extension DreamsViewController{
                 self.updateDreamsArray()
                 DispatchQueue.main.async {
                     if PersistanceLayer.coreData.fetch(type: Dream.self).count == 0 {
-                        self.emptyLbl.isHidden = false
+                        self.emptyView.isHidden = false
                     }
                 }
                 self.tableView.reloadData()
@@ -271,4 +274,6 @@ extension DreamsViewController{
             return UIMenu(title: "", children: [deleteAction])
         }
     }
+    
+    
 }
