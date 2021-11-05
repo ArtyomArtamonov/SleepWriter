@@ -96,6 +96,17 @@ class DreamsViewController: UITableViewController {
             sortData()
         }
     }
+    
+    
+    
+    private var emptyView: EmptyView = {
+       let view = EmptyView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return view
+    }()
+    
+    
     private var dreamSorter : DreamSorter!
     private var dreamsBySections : [[Dream]]!
     public weak var delegate : MainViewControllerDelegate?
@@ -134,11 +145,22 @@ class DreamsViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-    override func viewDidLoad() -> () {
-        super.viewDidLoad()
+    override func loadView() -> () {
+        super.loadView()
+        self.view.addSubview(emptyView)
+        self.emptyView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            emptyView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            emptyView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            emptyView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.2),
+            emptyView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8)
+        ])
         self.initiateSorter()
         self.initialConfiguration()
     }
+    
+    
 }
 
 extension DreamsViewController{
@@ -185,6 +207,16 @@ extension DreamsViewController{
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if getDreamsCount(withOffset: section) > 0 {
+            DispatchQueue.main.async {
+                self.emptyView.isHidden = true
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.emptyView.isHidden = false
+            }
+        }
+        
         return getDreamsCount(withOffset: section)
     }
     
@@ -231,10 +263,17 @@ extension DreamsViewController{
                 PersistanceLayer.coreData.delete(object: self.dreamsBySections[indexPath.section][indexPath.row])
                 self.dreamSorter.remove(at : indexPath)
                 self.updateDreamsArray()
+                DispatchQueue.main.async {
+                    if PersistanceLayer.coreData.fetch(type: Dream.self).count == 0 {
+                        self.emptyView.isHidden = false
+                    }
+                }
                 self.tableView.reloadData()
             }
             
             return UIMenu(title: "", children: [deleteAction])
         }
     }
+    
+    
 }

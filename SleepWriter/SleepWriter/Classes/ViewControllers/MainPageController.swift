@@ -87,3 +87,4 @@ extension MainPageController : UIPageViewControllerDelegate, UIPageViewControlle
         return self.pages[index + 1]
     }
 }
+

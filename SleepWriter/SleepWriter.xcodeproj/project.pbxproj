@@ -39,6 +39,7 @@
 		BFDF4BB725040209006F020D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFDF4BB525040209006F020D /* Main.storyboard */; };
 		BFDF4BB92504020A006F020D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFDF4BB82504020A006F020D /* Assets.xcassets */; };
 		BFDF4BBC2504020A006F020D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFDF4BBA2504020A006F020D /* LaunchScreen.storyboard */; };
+		FE8D76AF27348EDA0081409A /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8D76AE27348EDA0081409A /* EmptyView.swift */; };
 		FF2E24F86B4AD12E758A7BED /* Pods_SleepWriter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6BE511E56573F92F224028C /* Pods_SleepWriter.framework */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,7 @@
 		BFDF4BBB2504020A006F020D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFDF4BBD2504020A006F020D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB2E5AD0E46AF9C9CC372D77 /* Pods-SleepWriter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SleepWriter.release.xcconfig"; path = "Target Support Files/Pods-SleepWriter/Pods-SleepWriter.release.xcconfig"; sourceTree = "<group>"; };
+		FE8D76AE27348EDA0081409A /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +220,7 @@
 			children = (
 				92680C5F254B1EC30032570C /* DreamCell */,
 				BF59D11325531B4C00BC24DB /* HeaderView.swift */,
+				FE8D76AE27348EDA0081409A /* EmptyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				92680C86254B34370032570C /* Date.swift in Sources */,
 				BF742DB925543F670050ADAE /* DreamDetailsViewController.swift in Sources */,
 				BFDF4BB425040209006F020D /* MainViewController.swift in Sources */,
+				FE8D76AF27348EDA0081409A /* EmptyView.swift in Sources */,
 				92680C72254B2C6C0032570C /* SleepWriter.xcdatamodeld in Sources */,
 				BF0779802506815C00FF8F05 /* UIColor.swift in Sources */,
 				92885C75254A808C008A6510 /* EditDreamViewController.swift in Sources */,

@@ -183,6 +183,7 @@
                             <constraint firstItem="IXE-qK-nTq" firstAttribute="trailing" secondItem="Go3-2u-mOd" secondAttribute="trailing" constant="16" id="zTZ-WG-RcW"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="fcw-Aa-0J4"/>
                     <connections>
                         <outlet property="bottomConstraint" destination="Jwk-1t-GYv" id="qlC-VM-d5F"/>
                         <outlet property="dreamTextView" destination="Go3-2u-mOd" id="69D-PL-nKQ"/>
@@ -262,22 +263,22 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="980"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rqc-ZZ-0bl" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="608"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="599"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="eea-hM-qou">
-                                                <rect key="frame" x="28" y="16" width="319" height="576"/>
+                                                <rect key="frame" x="28" y="16" width="319" height="567"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="9o2-QG-OPJ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="319" height="58"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="319" height="57.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dream of my life" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGZ-OQ-7Fj">
-                                                                <rect key="frame" x="0.0" y="0.0" width="319" height="33.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="319" height="33"/>
                                                                 <fontDescription key="fontDescription" name="Rubik-Bold" family="Rubik" pointSize="28"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01.02.2020" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVg-4V-5FT">
-                                                                <rect key="frame" x="0.0" y="37.5" width="319" height="20.5"/>
+                                                                <rect key="frame" x="0.0" y="37" width="319" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -285,7 +286,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AH5-9R-hBk">
-                                                        <rect key="frame" x="0.0" y="72" width="319" height="504"/>
+                                                        <rect key="frame" x="0.0" y="71.5" width="319" height="495.5"/>
                                                         <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Varius morbi enim nunc faucibus a pellentesque sit amet. Ultrices vitae auctor eu augue ut lectus arcu bibendum. Egestas sed tempus urna et pharetra pharetra massa. Neque vitae tempus quam pellentesque. Pulvinar elementum integer enim neque volutpat. Nisl vel pretium lectus quam id leo in vitae turpis. Pellentesque elit eget gravida cum sociis natoque penatibus et magnis. Ultrices vitae auctor eu augue ut lectus arcu bibendum. Vestibulum lectus mauris ultrices eros in cursus turpis massa. Egestas sed sed risus pretium quam vulputate. Dui id ornare arcu odio ut sem nulla pharetra diam. Ullamcorper a lacus vestibulum sed arcu non odio. Elementum curabitur vitae nunc sed velit dignissim sodales ut eu. Pulvinar pellentesque habitant morbi tristique senectus et netus. Tellus in hac habitasse platea. </string>
                                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -341,7 +342,7 @@
     </scenes>
     <resources>
         <namedColor name="Application Blue Color">
-            <color red="0.0" green="0.875" blue="1" alpha="0.59734648466110229" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.875" blue="1" alpha="0.59700000286102295" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Application Light Color">
             <color white="1" alpha="0.10000000149011612" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
